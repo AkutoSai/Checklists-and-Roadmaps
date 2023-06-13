@@ -94,17 +94,17 @@
       - Reverse engineer file formats, encryption schemes, or compression algorithms used for data storage.
       - Use scripting languages like Python to extract and interpret meaningful information from the data.
 
-   10. Security Analysis
+  10. Security Analysis
       - Assess the security mechanisms implemented in the smart car, including authentication, access control, encryption, or intrusion detection.
       - Identify potential vulnerabilities, weaknesses, or attack vectors in the smart car's systems or software.
       - Conduct security testing and analysis using tools like fuzzers, static analysis tools, or penetration testing frameworks.
 
-   11. Documentation and Reporting
+  11. Documentation and Reporting
       - Document all findings, observations, and insights gained during the reverse engineering process.
       - Create detailed reports that outline the smart car's architecture, components, protocols, security vulnerabilities, and recommendations for improvement.
       - Prepare clear and concise documentation that can be shared with relevant stakeholders or the smart car manufacturer.
 
-   12. Responsible Disclosure
+  12. Responsible Disclosure
       - Follow responsible disclosure practices when reporting identified vulnerabilities or weaknesses to the smart car manufacturer or relevant security organizations.
       - Collaborate with the smart car manufacturer to address and remediate the identified security issues.
 
