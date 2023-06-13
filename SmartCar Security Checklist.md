@@ -41,6 +41,10 @@
    - Evaluate the security of remote access features, such as mobile apps or web interfaces. Test for vulnerabilities in authentication, session management, or data transmission.
    - Attempt to exploit any security weaknesses in the remote access systems to gain unauthorized control over the smart car.
    - Test the robustness of security controls like rate limiting, account lockouts, or intrusion detection systems to prevent unauthorized access.
+   - Test the security of remote communication channels such as mobile apps, web interfaces, or APIs.
+   - Verify if encryption is implemented correctly for remote communication.
+   - Test for vulnerabilities in the authentication and session management mechanisms of remote communication systems.
+   - Attempt to intercept and manipulate communication between the smart car and remote systems.
 
 ## Vulnerability Management:
    - Conduct regular vulnerability scans and penetration tests to identify weaknesses in the smart car's systems.
@@ -50,9 +54,26 @@
    - Perform static and dynamic code analysis to identify potential security flaws or coding errors that could be exploited.
    - Test the resistance of the software against common attack vectors like Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), or Remote Code Execution (RCE).
    
+## CAN Bus Security Testing:
+   -  Test for vulnerabilities in the Controller Area Network (CAN) bus, which is used for communication between various components in a smart car.
+   - Attempt to inject malicious messages or manipulate the CAN bus traffic to disrupt or compromise the smart car's functionalities.
+   - Test the effectiveness of message authentication and integrity mechanisms in the CAN bus.
+   
+## Infotainment System Testing:
+
+   - Test for vulnerabilities in the smart car's infotainment system, including multimedia playback, navigation, and connectivity features.
+   - Verify if the system is isolated from critical car functionalities to prevent potential attacks on safety-critical systems.
+   - Test for vulnerabilities in Bluetooth, Wi-Fi, or cellular connectivity that could allow unauthorized access or data leakage.
+
+## Sensor and Camera Security Testing:
+
+   - Test for vulnerabilities in sensors and cameras used in smart cars, such as LiDAR, radar, or cameras for assisted driving or autonomous features.
+   - Verify if the sensors and cameras can be manipulated or spoofed to provide false inputs to the smart car's systems.
+   - Test for potential privacy risks associated with the collection and transmission of sensor and camera data.
+   
 ## Reverse Engineering
 
-   1. **Goals and Objectives**
+   1. Goals and Objectives
       - Clearly define the goals and objectives of the reverse engineering process for the smart car.
       - Determine the specific aspects of the smart car's technology, systems, or components that need to be analyzed.
 
@@ -108,6 +129,12 @@
       - Follow responsible disclosure practices when reporting identified vulnerabilities or weaknesses to the smart car manufacturer or relevant security organizations.
       - Collaborate with the smart car manufacturer to address and remediate the identified security issues.
 
+## Malware and Intrusion Detection Testing:
+
+   - Test the smart car's resistance to malware or intrusion attempts.
+   - Attempt to install and execute malicious software on the smart car's systems.
+   - Test the effectiveness of intrusion detection and prevention mechanisms in detecting and responding to potential threats.
+
 ## Physical Security:
    - Evaluate the physical security measures of the smart car.
    - Ensure that physical access to critical components, such as the diagnostic port or electronic control units (ECUs), is restricted.
@@ -115,6 +142,9 @@
    - Evaluate the physical security measures of the smart car, including access to critical components like the diagnostic port or ECUs.
    - Test the effectiveness of anti-theft mechanisms like immobilizers or tracking systems to ensure they cannot be easily bypassed or tampered with.
    - Verify if physical tampering or manipulation of the smart car's components can lead to unauthorized access or control.
+   - Assess the physical security measures of the smart car, such as keyless entry systems, immobilizers, or alarm systems.
+   - Test for vulnerabilities in keyless entry systems, including relay attacks or signal interception.
+   - Verify if physical tampering or manipulation of components can lead to unauthorized access or control over the smart car.
 
 ## Incident Response:
    - Establish an incident response plan specifically tailored to smart car security incidents.
