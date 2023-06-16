@@ -1,4 +1,4 @@
-# Comprehensive Checklist for SmartCar Security
+# Comprehensive Checklist for Vehicle Security
 
 ## Firmware and Software:
    - Firmware and software updates are essential to address security vulnerabilities and improve the performance of smart cars. Keeping the firmware and software up to date ensures that the latest security patches and bug fixes are applied.
