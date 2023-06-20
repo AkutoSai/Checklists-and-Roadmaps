@@ -91,19 +91,19 @@
       - Introduce deliberate errors into CAN messages to test the system's error handling and fault tolerance mechanisms.
       - Verify that error conditions are properly detected, reported, and recovered from without compromising security.
    
-   10. Denial-of-Service (DoS) Resilience:
+  10. Denial-of-Service (DoS) Resilience:
       - Test the system's resistance against DoS attacks targeting the CAN bus.
       - Assess if the system can continue operating correctly and reject malicious or excessive messages.
 
-   11. Network Segmentation:
+  11. Network Segmentation:
       - Evaluate the effectiveness of network segmentation measures to isolate critical CAN bus segments from less secure areas.
       - Test if unauthorized access to one network segment can be prevented from affecting other segments.
    
-   12. Secure Configuration Management:
+  12. Secure Configuration Management:
       - Test the system's configuration management processes, ensuring that default passwords, insecure settings, or misconfigurations are addressed.
       - Verify that secure configuration practices are followed throughout the lifecycle of the CAN bus system.
    
-   13. Redundancy and Failover Testing:
+  13. Redundancy and Failover Testing:
       - Test redundant CAN bus architectures and failover mechanisms to ensure seamless operation and data integrity in case of component failures or attacks.
    
 ## Infotainment System Testing:
