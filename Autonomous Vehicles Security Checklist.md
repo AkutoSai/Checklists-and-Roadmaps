@@ -1,4 +1,4 @@
-# Comprehensive Checklist for Vehicle Security
+# Comprehensive Checklist for  Autonomous Vehicle Security
 
 ## Firmware and Software:
    - Firmware and software updates are essential to address security vulnerabilities and improve the performance of smart cars. Keeping the firmware and software up to date ensures that the latest security patches and bug fixes are applied.
@@ -87,10 +87,10 @@
 
    4. Tools and Equipment
       - Identify and prepare the necessary tools and equipment for the reverse engineering process, such as:
-         - **Hardware Tools:** JTAG debuggers, logic analyzers, oscilloscopes, multimeters.
-         - **Software Tools:** IDA Pro, Ghidra, Binwalk, Wireshark, Bus Pirate, CAN bus analyzers.
-         - **Programming Tools:** Python, C/C++, assembly language.
-         - **Hardware Interfaces:** JTAG adapters, CAN bus interfaces, USB-to-serial converters.
+         - **Hardware Tools:** JTAG debuggers, logic analyzers, oscilloscopes, multimeters and HackRF.
+         - **Software Tools:** IDA Pro, Ghidra, Binwalk, Wireshark, Bus Pirate and CAN bus analyzers.
+         - **Programming Tools:** Python, C/C++ and assembly language.
+         - **Hardware Interfaces:** JTAG adapters, CAN bus interfaces and USB-to-serial converters.
   
    5. Physical Inspection
       - Perform a thorough physical inspection of the smart car, examining its hardware components, connectors, circuit boards, and wiring.
@@ -109,6 +109,10 @@
       - Capture and analyze network traffic between different components or systems of the smart car.
       - Identify the protocols and data formats used for communication, such as CAN bus, LIN bus, Ethernet, or wireless protocols.
       - Use tools like Wireshark, Bus Pirate, or CAN bus analyzers to analyze the network traffic and reverse engineer protocols.
+      - Assess the security of wireless protocols used for vehicle-to-vehicle (V2V) and vehicle-to-infrastructure (V2I) communication, such as Dedicated Short-Range Communications (DSRC) or Cellular Vehicle-to-Everything (C-V2X).
+      - Verify that protocols are hardened against common attacks such as Denial-of-Service (DoS), replay attacks, or Man-in-the-Middle (MitM) attacks.
+      - Assess the implementation of secure key exchange protocols, such as Diffie-Hellman or Elliptic Curve Cryptography (ECC), to ensure secure communication and encryption key generation.
+      - Verify the integrity and authenticity of sensor data transmitted through these protocols.
 
    9. Data Analysis
       - Identify and analyze data stored within the smart car's systems, such as configuration files, logs, or diagnostic data.
