@@ -55,9 +55,56 @@
    - Test the resistance of the software against common attack vectors like Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), or Remote Code Execution (RCE).
    
 ## CAN Bus Security Testing:
-   -  Test for vulnerabilities in the Controller Area Network (CAN) bus, which is used for communication between various components in a smart car.
-   - Attempt to inject malicious messages or manipulate the CAN bus traffic to disrupt or compromise the smart car's functionalities.
-   - Test the effectiveness of message authentication and integrity mechanisms in the CAN bus.
+   1. Message Injection:
+      - Send malformed or invalid CAN messages to test the system's resilience against message spoofing or unauthorized command execution.
+      - Inject messages with altered source addresses or modified data payloads to assess the system's ability to detect and reject unauthorized messages.
+   
+   2.Bus Off Recovery:
+      - Flood the CAN bus with a high volume of messages to test the system's response and recovery mechanisms.
+      - Observe how the system handles bus errors, performs error recovery, and resumes normal operations.
+
+   3. Replay Attacks:
+      - Capture legitimate CAN bus messages and replay them to test if the system is vulnerable to unauthorized message playback.
+      - Assess the system's ability to detect and prevent replayed messages from causing unintended actions or compromising security.
+
+   4. Bus Monitoring:
+      - Deploy a monitoring tool to analyze CAN bus traffic for anomalies, such as unexpected or unauthorized messages.
+      - Identify abnormal communication patterns, unknown devices, or suspicious message content.
+   
+   5. ECU Authentication:
+      - Verify that only authorized ECUs are allowed to communicate on the CAN bus.
+      - Test the system's authentication mechanisms, such as digital signatures, cryptographic protocols, or secure key exchanges.
+   
+   6. Data Integrity and Confidentiality:
+      - Modify CAN messages to test the system's ability to detect and prevent data tampering.
+      - Evaluate encryption mechanisms for protecting sensitive data transmitted over the CAN bus.
+   
+   7. Bus Isolation:
+      - Assess the system's ability to isolate critical components or ECUs from potentially compromised or less critical ones.
+      - Test if an attack on one ECU can be contained and prevented from affecting the entire CAN bus network.
+
+   8. Bus Load Analysis:
+      - Test the system's performance and resilience under different bus load conditions.
+      - Assess the impact of high message traffic on the system's security features and overall functionality.
+   
+   9. Error Handling and Fault Tolerance:
+      - Introduce deliberate errors into CAN messages to test the system's error handling and fault tolerance mechanisms.
+      - Verify that error conditions are properly detected, reported, and recovered from without compromising security.
+   
+   10. Denial-of-Service (DoS) Resilience:
+      - Test the system's resistance against DoS attacks targeting the CAN bus.
+      - Assess if the system can continue operating correctly and reject malicious or excessive messages.
+
+   11. Network Segmentation:
+      - Evaluate the effectiveness of network segmentation measures to isolate critical CAN bus segments from less secure areas.
+      - Test if unauthorized access to one network segment can be prevented from affecting other segments.
+   
+   12. Secure Configuration Management:
+      - Test the system's configuration management processes, ensuring that default passwords, insecure settings, or misconfigurations are addressed.
+      - Verify that secure configuration practices are followed throughout the lifecycle of the CAN bus system.
+   
+   13. Redundancy and Failover Testing:
+      - Test redundant CAN bus architectures and failover mechanisms to ensure seamless operation and data integrity in case of component failures or attacks.
    
 ## Infotainment System Testing:
 
