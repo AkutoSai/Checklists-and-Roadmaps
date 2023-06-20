@@ -59,7 +59,7 @@
       - Send malformed or invalid CAN messages to test the system's resilience against message spoofing or unauthorized command execution.
       - Inject messages with altered source addresses or modified data payloads to assess the system's ability to detect and reject unauthorized messages.
    
-   2.Bus Off Recovery:
+   2. Bus Off Recovery:
       - Flood the CAN bus with a high volume of messages to test the system's response and recovery mechanisms.
       - Observe how the system handles bus errors, performs error recovery, and resumes normal operations.
 
