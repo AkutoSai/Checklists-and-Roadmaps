@@ -1,7 +1,7 @@
 # Comprehensive Checklist for  Autonomous Vehicle Security
 
 ## Firmware and Software:
-   - Firmware and software updates are essential to address security vulnerabilities and improve the performance of smart cars. Keeping the firmware and software up to date ensures that the latest security patches and bug fixes are applied.
+   - [ ] Firmware and software updates are essential to address security vulnerabilities and improve the performance of smart cars. Keeping the firmware and software up to date ensures that the latest security patches and bug fixes are applied.
    - Manufacturers regularly release updates, so it's crucial to check for new updates and apply them promptly. These updates may address vulnerabilities, enhance system stability, or introduce new features.
    - Compatibility between software versions and hardware components is important to ensure smooth functioning. Verify that the software version you're using is suitable for the specific smart car model and its components.
 
