@@ -167,7 +167,7 @@
       - [ ] Use scripting languages like Python to extract and interpret meaningful information from the data.
 
   10. Security Analysis
-      - Assess the security mechanisms implemented in the smart car, including authentication, access control, encryption, or intrusion detection.
+      - [ ] Assess the security mechanisms implemented in the smart car, including authentication, access control, encryption, or intrusion detection.
       - [ ] Identify potential vulnerabilities, weaknesses, or attack vectors in the smart car's systems or software.
       - [ ] Conduct security testing and analysis using tools like fuzzers, static analysis tools, or penetration testing frameworks.
 
