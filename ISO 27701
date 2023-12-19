@@ -36,6 +36,29 @@ Below is an exhaustive checklist to ensure a full understanding and implementati
 
 #### **8. Internal Audits**
 - [ ] Regular and timely audits of the privacy management system
+- [ ] What are the internal and external issues that are relevant to the ISMS.
+- [ ] How do they affect its ability to achieve its intended outcome.
+- [ ] Who are the interested parties?
+- [ ] What are their requirements?
+- [ ] How have their requirments been established?
+- [ ] What is the ISMS scope? Is it documented, defined and reasonable?
+- [ ] Does ISMS consider relevant issues and requirments?
+- [ ] Who is defined as top management within the scope of the ISMS?
+- [ ] How does top management demonstrate leadership and commitment?
+- [ ] Are information security policies and objectives established?
+- [ ] Are enough resources allocated to the ISMS?
+- [ ] How does top management communicate to everyone involved in the ISMS?
+- [ ] Is there a documented risk assessment process?
+- [ ] Does it address risk acceptance criteria and when assessments should be done?
+- [ ] Does it identify a reasonable set of risks and specify owners?
+- [ ] Are the likelihood and impact of risks assessed appropriately and risk levels determined?
+- [ ] How are the risk evaluated and prioritized?
+- [ ] Is there a documents risk treatment process?
+- [ ] Review the most recent risk treatment plan
+- [ ] Are reasonable risk treatment options selected?
+- [ ] Are the controls chosen to treat the risk stated clearly?
+- [ ] Has a satement of Applicability been produced and are inclusions and exclusions reasonable?
+- [ ] Has the risk treatment plan been signed-off by the risk-owners?
 
 #### **9. Management Review**
 - [ ] Regular and documented review of privacy management system by top management
