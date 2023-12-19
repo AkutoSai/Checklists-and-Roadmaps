@@ -1,0 +1,95 @@
+The ISO27701 standard includes Privacy Information Management — a selection of privacy-related practices, legally binding rules and regulations, and stakes for management responsibility.
+
+Below is an exhaustive checklist to ensure a full understanding and implementation of ISO27701. Please note that the list revolves around the control objectives that need to be achieved.
+
+## Checklist for ISO27701 
+
+#### **1. Privacy Governance and Management**
+- [ ] Defined policy for compliance with privacy-related laws and regulations
+- [ ] Consideration of the consequences of privacy to interested parties
+- [ ] Budget allocated for the continuous management of privacy-related matters
+
+#### **2. Risk Management**
+- [ ] Identification and assessment of privacy risks
+- [ ] Mitigation and control of risks according to the risk and opportunity policy
+- [ ] Risk review at planned intervals
+
+#### **3. Roles and Responsibilities**
+- [ ] Defined roles and responsibilities of employees regarding privacy
+- [ ] Roles and responsibilities communicated to every member
+
+#### **4. Objectives of the Privacy Management System**
+- [ ] Documented and communicated strategic and operational objectives
+- [ ] Measuring and reporting of the progress towards objectives
+
+#### **5. Privacy by Design**
+- [ ] Development, implementation, and documentation of the privacy by design model
+- [ ] Lifecycle protection of PII (Personally Identifiable Information) in systems and procedures
+
+#### **6. Supplier Relationships**
+- [ ] Agreements with suppliers of goods and services that could impact the privacy of PII
+- [ ] Monitoring and review of the supplier’s performance regarding privacy
+
+#### **7. Incidents and Associated Actions**
+- [ ] Corrective actions taken to mitigate the effects of privacy incidents
+- [ ] Preventive actions taken to prevent recurrence of a privacy breach
+
+#### **8. Internal Audits**
+- [ ] Regular and timely audits of the privacy management system
+
+#### **9. Management Review**
+- [ ] Regular and documented review of privacy management system by top management
+
+#### **10. Training and Awareness**
+- [ ] Regular training and awareness programs on privacy policies and rules for employees
+
+#### **11. Control of Documented Information**
+- [ ] Control of documented information related to the privacy management system
+
+#### **12. PII Mapping**
+- [ ] Map of PII showing how data is stored, processed, and transmitted
+Continuing from the prior checklist, here are the subsequent aspects to consider:
+
+#### **13. PII Processing**
+- [ ] Inventory and documented purpose of PII data processing activities.
+- [ ] Mechanisms in place to ensure consent has been recorded before any processing activity.
+
+#### **14. Data Minimization**
+- [ ] Ensure that only the necessary amount of data is used.
+- [ ] Regular checks to test the necessity of data collected and processed.
+
+#### **15. Rights of PII principals**
+- [ ] Mechanisms in place to respond to data access, rectification and erasure requests.
+- [ ] Policy for respecting and protecting the rights of PII principals.
+
+#### **16. Consent**
+- [ ] Validation of mechanisms for gaining and managing consent.
+- [ ] System for withdrawing and renewing consent.
+
+#### **17. Incident Response**
+- [ ] Documented procedure on steps to take during an incident.
+- [ ] Established roles and responsibilities for a privacy incident response.
+
+#### **18. Awareness Training**
+- [ ] Periodic security and privacy awareness training for employees.
+- [ ] Privacy training tailored to the specific roles and responsibilities of staff members.
+
+#### **19. Cross Border Transfers**
+- [ ] Documented agreement for international transfer of PII.
+- [ ] Ensure compliance with local laws in host and parent countries.
+
+#### **20. Automated Decision Making**
+- [ ] Compliance with privacy rules for automated decision-making systems.
+- [ ] Mechanisms to incorporate controls for automated decision making.
+
+#### **21. Joint Controllers**
+- [ ] Agreement on who the joint controllers are.
+- [ ] Documented agreement about division of responsibilities.
+
+#### **22. Discrepancies**
+- [ ] Framework in place to identify and address discrepancies.
+- [ ] Periodic review of practices to minimize risks of discrepancies.
+
+#### **23. Business Continuity**
+- [ ] Privacy aspects have been considered in the context of business continuity.
+- [ ] Provisions in place to ensure data security during emergency recovery.
