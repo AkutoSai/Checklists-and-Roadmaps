@@ -157,12 +157,9 @@
 - Login without accepting T&C checkbox on login page (Bypass client side validations)
 - Bypass OTP validation and login in the app (By client side validation)
 - Bypass OTP validation and login in the app (By server side validation)
-- Start new booking without accepting Checkbox on the Dashboard page (Post login)
-- Check if Applicant can edit their details on the Your Details page once applicant has clicked on continue from your details page. 
-- Bypass Countdown timer limit on every page of the application journey to continue with Booking journey post timer reahced value '0'
 - Do payment without accepting T&C on Review & Pay page
 - Edit user details after successful payment and booking
-- Check if User A can add entries in same booking request 
+- Check if User A can add multiple entries in same booking request 
 
 # API (General)
 
