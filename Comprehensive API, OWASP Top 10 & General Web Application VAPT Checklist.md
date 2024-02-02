@@ -51,7 +51,7 @@
 - Business Logic Scenario: Check for Privilege Elevation between roles
 - Business Logic Scenario: Check to access to data from customer A with customer B by modifying the sequential id parameters sent in the requests
 - Business Logic Scenario: Try accessing URLs directly with encrypted query strings (used to identify the user) to verify unauthorized access
-- Business Logic Scenario: Applying for refund after scheduling the appointment, Modification of refund amount, Initiating refund on behalf of other users
+- Business Logic Scenario: Abuse refund feature: Modification of refund amount, Initiating refund on behalf of other users
 - Business Logic Scenario: Attempt resetting other users password by misusing the reset password functionality (by tampering with the parameters like email / id / unique identifiers)
 - Try to access other users personal data
 - After accessing the dashboard, change the email ID to get the privilege of other user
@@ -138,7 +138,7 @@
 - If Waitlist functionality exists in the application then try to bypass the functionality and book the appointments.
 - Try to raise the refund request for higher amount than actual amount
 - URL Tamper from Server Response
-- Manipulate time or any other parameter in appointment
+- Manipulate time or any other parameter in appointment/ticket
 - Try to raise the refund request for same IRL number multiple time and with different amount
 
 ## Cloudflare/WAF Bypass
