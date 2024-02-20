@@ -264,8 +264,6 @@ Note: VPC acts as a security boundary, and proper design and periodic monitoring
 
 **Tools**: AWS Management Console, AWS CLI
 
-# IAM (Identity and Access Management) Continued
-
 ## **7. Version IAM Policies**
 
 **Test Case**: Use versioning for IAM policies to preserve, retrieve, and default to an older version of a policy.
@@ -337,8 +335,6 @@ Note: VPC acts as a security boundary, and proper design and periodic monitoring
 **Methods**: Use EBS snapshot copy command to copy and encrypt your unencrypted snapshot.
 
 **Tools**: AWS Management Console, AWS CLI
-
-## IAM (Identity and Access Management) Continued
 
 ## **9. Integration with AWS Organizations**
 
@@ -535,9 +531,7 @@ Note: Maintaining proper security hygiene for databases and S3 buckets is just a
 
 **Tools**: Metasploit, Kali Linux, Burp Suite
 
-# Penetration Testing Continued 
-
-**1. Social Engineering Penetration Test**
+** <break>
 
    - **Phishing Test**:
    
