@@ -47,18 +47,11 @@
 # General Web Application VAPT Checklist
 
 ## IDOR/Authorisation
-- Direct browse to all pages reserved for high privileged user while unauthenticated or logged in as the least privilege user
-- Business Logic Scenario: Check for Privilege Elevation between roles
-- Business Logic Scenario: Check to access to data from customer A with customer B by modifying the sequential id parameters sent in the requests
-- Business Logic Scenario: Try accessing URLs directly with encrypted query strings (used to identify the user) to verify unauthorized access
-- Business Logic Scenario: Abuse refund feature: Modification of refund amount, Initiating refund on behalf of other users
-- Business Logic Scenario: Attempt resetting other users password by misusing the reset password functionality (by tampering with the parameters like email / id / unique identifiers)
 - Try to access other users personal data
 - After accessing the dashboard, change the email ID to get the privilege of other user
 - Delete other users account by modifying user id
-- Try to book appointment of User B with User's A's login page
+- Try to book ticket of User B with User's A's login page
 - Try to bypass the details pages and access review page. 
-- Business Logic Scenario: Access other users payment receipts, appointment letters, other documents (if any)
 
 ## Payment Tampering
 - Test all parameters that carry the transaction amount
@@ -121,25 +114,7 @@
 - Server side validation for mandatory data
 
 ## Business Logic Testing
-- Attempt full path disclosure attacks
-- Test all cookie values for parameter change / manipulation
-- Test all parameter values for parameter change / manipulation
-- Check for any other business logic scenario bypass/ abuse (if any applicable basis the application design)
-- Analyse GET and POST requests processed by the application.
-- Verify whether the application sends sensitive information such as passwords in GET requests at any point in time"
-- Test for web application fingerprint
-- Check for rate limiting on the sensitive functionalities / actions
-- Test for HTTP methods
-- Check for directory listing / browsing
-- Check if default technology files are accessible over the Internet (Tomcat, PHP, etc.)
-- Check if admin interfaces of web or application servers is accessible over the Internet
-- Verify whether HTTPS is used to encrypt credentials and / or sensitive data
-- Bot related issues/ bypassing the initial pages to access some other pages/steps/functions
-- If Waitlist functionality exists in the application then try to bypass the functionality and book the appointments.
-- Try to raise the refund request for higher amount than actual amount
-- URL Tamper from Server Response
-- Manipulate time or any other parameter in appointment/ticket
-- Try to raise the refund request for same IRL number multiple time and with different amount
+- Intentionally left blank
 
 ## Cloudflare/WAF Bypass
 - Add public IP and domain to the Host file and try to access the application
