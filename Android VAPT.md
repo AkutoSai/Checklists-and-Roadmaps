@@ -5,6 +5,7 @@
    - [ ] Root Detection Bypass
    - [ ] Emulator Detection Bypass
    - [ ] SSL Pinning Bypass
+   - [ ] Dead Code Injection
    - [ ] Android - Debuggable
    - [ ] Android - Exported
    - [ ] MinSDK (Outdated Android Version Supported)
