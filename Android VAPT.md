@@ -1,1 +1,131 @@
+# Comprehensive Android VAPT Checklist
 
+## Generic Test Cases:
+   - [ ] Improper Code Obfuscation
+   - [ ] Root Detection Bypass
+   - [ ] Emulator Detection Bypass
+   - [ ] SSL Pinning Bypass
+   - [ ] Android - Debuggable
+   - [ ] Android - Exported
+   - [ ] MinSDK (Outdated Android Version Supported)
+   - [ ] Weak Cryptographic Algorithm
+   - [ ] ClearText communication (True)
+   - [ ] Content Resolvers
+   - [ ] Custom/Dangerous Permissions
+   - [ ] createPackageContext
+   - [ ] Dynamic Code Loading
+   - [ ] Hardcoded Cryptographic Secrets
+   - [ ] Implicit Intent Hijacking
+   - [ ] Activity Hijacking
+   - [ ] Service Hijacking
+   - [ ] Directories exported to FileProvider
+   - [ ] Insecure API/Library
+   - [ ] Insecure Broadcast Reciever
+   - [ ] Boradcast thief
+   - [ ] Malicious Broadcast Injection
+   - [ ] Redundance Permission Granted
+   - [ ] Misconfigured DNS
+   - [ ] Insecure M-to-M setup
+   - [ ] Intent Redirection
+   - [ ] RawSQL Queries in Use
+   - [ ] Unencrypted Credentials/Sensitive Information/PII/Account Metadata in Application Logs
+   - [ ] Path Traversal
+   - [ ] Insecure WebView Implementation (Native Bridges, Insecure URI loading)
+   - [ ] Permission-bases access control to exported components
+   - [ ] Clipboard Access
+   - [ ] Sticky broadcast
+   - [ ] Android TapJacking
+   - [ ] StrandHogg Attack (Task Affinity Vulnerability)
+   - [ ] Test and Debug feature
+   - [ ] Unsafe Deserialization
+   - [ ] Unsafe Download Manager
+   - [ ] Unsafe Hostname Verifier
+   - [ ] Unsafe X509TrustManager
+   - [ ] Use of Native Code
+   - [ ] XML External Entities Injection
+   - [ ] Weak PRNG
+   - [ ] Zip Path Traversal
+   - [ ] Jauns Vulnerability
+   - [ ] Debug Certificate
+   - [ ] Improperly Exposed Directories to FileProvider
+   - [ ] Log Info Disclosure
+   - [ ] Path traversal
+   - [ ] Sensitive Data Stored in External Storage
+   - [ ] Zip Path Traversal
+   - [ ] Private IP Disclosure
+   - [ ] Application build contains Obsolete Files
+   - [ ] Android Backup Vulnerability
+   - [ ] Analytics data sent to 3rd parties
+   - [ ] Screen capture/screenshot
+   - [ ] Applicatio Background Caching
+   - [ ] Private IP Disclosure
+
+## Insecure Data Storage:
+   - [ ] Unencrypted Credentials/Sensitive Information/PII/Account Metadata/APIs in Databases (SQLite db)
+   - [ ] Unencrypted Credentials/Sensitive Information/PII/Account Metadata/APIs in Memory Dump
+   - [ ] Unencrypted Credentials/Sensitive Information/PII/Account Metadata/APIs in SharedPreferences
+   - [ ] Allow Global File Permission on App Data
+   - [ ] Store sensitive information stored in temp file
+   - [ ] Sensitive data stored in external storage
+   - [ ] Hard coded sensitive information in Application Code/Manifest File/Strings XML
+   - [ ] App/Web Caches Sensitive Data Leak
+   - [ ] Testing for Sensitive Information in Cookie Stores
+   - [ ] Testing for Sensitive Information in KeyStore
+   - [ ] Testing for file cache
+   - [ ] Android Dictionary Cache
+
+## Misconfigured TLS Protection:
+   - [ ] Failure to Implement Trusted Issuers
+   - [ ] Third-party Data Transit on Unencrypted Channel
+   - [ ] Certificate Chain is not Validated
+   - [ ] Insecure permissions on Unix domain sockets
+   - [ ] Insecure use of network sockets
+   - [ ] Network traffic - http-https
+   - [ ] No Certificate Pinning
+   - [ ] Ignore SSL Certificate Error
+   - [ ] Cleartext information under SSL Tunnel
+   - [ ] Invalid SSL Certificate
+
+## Misconfigured Authorization and Authentication:
+   - [ ] Attacker can bypass Second Level Authentication
+   - [ ] Direct Reference to internal resource without authentication
+   - [ ] Cleartext password in Response
+   - [ ] Application does not have Logout Functionality
+   - [ ] Authentication bypassed
+   - [ ] Improper or NO implementation of Change Password Page
+   - [ ] Use Spoof-able Values for Authenticating User (IMEI, Android ID)
+
+## Session Misconfiguration:
+   - [ ] Improper Session Timeout
+   - [ ] Concurrent Logins
+   - [ ] Improper cookie attributes
+   - [ ] Weak cookie hashing
+   - [ ] Persistent cookies
+   - [ ] Using device identifier as session
+   - [ ] Cookie caching
+   - [ ] Session fixation
+   - [ ] Improper session validation
+   - [ ] Account Lockout not implemented
+
+## Weak Server Side Controls (Domain/API):
+   - [ ] Application is Vulnerable to XSS (Webview and JS dependency)
+   - [ ] Malicious File Upload
+   - [ ] SQL Injection
+   - [ ] Application is vulnerable to LDAP Injection
+   - [ ] Application is vulnerable to OS Command Injection
+   - [ ] Cross Origin Resource Sharing
+   - [ ] Improper Input Validation - Server Side
+   - [ ] Detailed Error page shows internal sensitive information
+   - [ ] Application Allows HTTP Methods apart from GET and POST
+   - [ ] Cross Site Request Forgery (CSRF)/SSRF
+   - [ ] Cacheable HTTPS Responses
+   - [ ] Server/OS fingerprinting is possible
+   - [ ] Directory Browsing
+   - [ ] URL Modification
+   - [ ] Privilege Escalation
+   - [ ] Open URL Redirects are possible
+   - [ ] Sensitive information sent as a querystring parameter
+   - [ ] No Rate Limiting
+   - [ ] Misconfigured WAF
+   - [ ] Misconfigured Headers
+   - [ ] Potential Unwanted Ports
