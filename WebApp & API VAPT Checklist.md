@@ -1,4 +1,4 @@
-# API, OWASP Top 10 & General Web Application VAPT Checklist
+# Generic WebApp & API - VAPT Checklist
 
 ## 1. Injection
 - Identify areas where untrusted data is sent as part of a command or query.
