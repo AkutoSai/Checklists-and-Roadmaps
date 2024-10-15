@@ -130,3 +130,4 @@
    - [ ] Misconfigured WAF
    - [ ] Misconfigured Headers
    - [ ] Potential Unwanted Ports
+   - [ ] SSL/TLS Misconfiguration (Using HTTP instead of HTTPS...)
