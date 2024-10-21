@@ -162,7 +162,7 @@ Install Frida server from Frida Github Releases section [Push Frida server file 
 ## Check for running services and applications in Frida in new terminal
 - frida-ps -U | frida-ps -U -a -i
 
-## Open another terminal
+## Open Objection
 - objection --gadget "Take name from Frida services or keep package name if available" device-type
 - objection --gadget "Take name from Frida services or keep package name if available" explore
 - android root disable
@@ -176,5 +176,5 @@ Install Frida server from Frida Github Releases section [Push Frida server file 
 ## To run multiple scripts with Frida
 - frida -U -f [App ID] -l script1.js -l script2.js
 
-## Root Detection Bypass
+## Using Magisk
 - Magisk > Install module MagiskHide Props Config > Conceal app icon and package name > settings > configure deny list > select <package_name> + Frida > multi bypass script
