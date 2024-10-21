@@ -1,5 +1,3 @@
-# Android VAPT Checklist & Configuration
-
 # Generic Test Cases:
    - [ ] Improper Code Obfuscation
    - [ ] Root Detection Bypass
