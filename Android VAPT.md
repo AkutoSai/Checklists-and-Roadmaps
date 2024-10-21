@@ -1,51 +1,4 @@
-# Configuration for Windows
-
-- Install Python and ADB and configure environment variables
-- pip install frida frida-tools objection
-Install Frida server from Frida Github Releases section [Push Frida server file basis android architecture]
-- adb push frida-server-16.5.1-android-x86_64 /data/local/custom-server [create "custom-server" folder]
-- chmod 777 frida-server-16.5.1-android-x86_64
-- adb shell /data/local/custom-server/frida-server-16.5.1-android-x86_64 & [In case permission is denied run "adb shell su && /data/local/custom-server/frida-server-16.5.1-android-x86_64 &"]
-
-## To verify device architecture
-- adb shell getprop ro.product.cpu.abi
-
-## To convert certs
-- openssl x509 -inform der -in Burpy.der -out Burpy.pem
-- openssl x509 -inform PEM -subject_hash_old -in Burpy.pem
-- mv Burpy.pem 9a5ba575.0
-- adb push 9a5ba575.0 /system/etc/security/cacerts/
-
-## For read only file system error:
-- adb shell
-- su
-- mount -o remount, rw /
-- Exit the shell and push certificate.
-
-## Configuring Burp Proxy
-- Genymotion Emulator >> Keep NAT
-- Whatever emulator is in use  - set proxy IP as same as system's current network proxy & PORT to 8085
-- Burp Proxy Settings - PORT to 8085 & Interface to "All"
-
-## Check for running services and applications in Frida in new terminal
-- frida-ps -U | frida-ps -U -a -i
-
-## Open another terminal
-- objection --gadget "Take name from Frida services or keep package name if available" device-type
-- objection --gadget "Take name from Frida services or keep package name if available" explore
-- android root disable
-- android sslpinning disable
-
-## Using Frida
-- frida --codeshare dzonerzy/fridantiroot -f <package-name> -U [Root Detection Bypass]
-- frida --codeshare fdciabdul/frida-multiple-bypass -f <package-name> -U [Multi Detection Bypass]
-- frida --codeshare pcipolloni/universal-android-ssl-pinning-bypass-with-frida -f <package-name> -U [SSL Pinning Bypass]
-
-## To run multiple scripts with Frida
-- frida -U -f [App ID] -l script1.js -l script2.js
-
-## Root Detection Bypass
-- Magisk > Install module MagiskHide Props Config > Conceal app icon and package name > settings > configure deny list > select <package_name> + Frida > multi bypass script
+# Android VAPT Checklist & Configuration
 
 # Generic Test Cases:
    - [ ] Improper Code Obfuscation
@@ -178,3 +131,52 @@ Install Frida server from Frida Github Releases section [Push Frida server file 
    - [ ] Misconfigured Headers
    - [ ] Potential Unwanted Ports
    - [ ] SSL/TLS Misconfiguration (Using HTTP instead of HTTPS...)
+
+# Configuration for Windows
+
+- Install Python and ADB and configure environment variables
+- pip install frida frida-tools objection
+Install Frida server from Frida Github Releases section [Push Frida server file basis android architecture]
+- adb push frida-server-16.5.1-android-x86_64 /data/local/custom-server [create "custom-server" folder]
+- chmod 777 frida-server-16.5.1-android-x86_64
+- adb shell /data/local/custom-server/frida-server-16.5.1-android-x86_64 & [In case permission is denied run "adb shell su && /data/local/custom-server/frida-server-16.5.1-android-x86_64 &"]
+
+## To verify device architecture
+- adb shell getprop ro.product.cpu.abi
+
+## To convert certs
+- openssl x509 -inform der -in Burpy.der -out Burpy.pem
+- openssl x509 -inform PEM -subject_hash_old -in Burpy.pem
+- mv Burpy.pem 9a5ba575.0
+- adb push 9a5ba575.0 /system/etc/security/cacerts/
+
+## For read only file system error:
+- adb shell
+- su
+- mount -o remount, rw /
+- Exit the shell and push certificate.
+
+## Configuring Burp Proxy
+- Genymotion Emulator >> Keep NAT
+- Whatever emulator is in use  - set proxy IP as same as system's current network proxy & PORT to 8085
+- Burp Proxy Settings - PORT to 8085 & Interface to "All"
+
+## Check for running services and applications in Frida in new terminal
+- frida-ps -U | frida-ps -U -a -i
+
+## Open another terminal
+- objection --gadget "Take name from Frida services or keep package name if available" device-type
+- objection --gadget "Take name from Frida services or keep package name if available" explore
+- android root disable
+- android sslpinning disable
+
+## Using Frida
+- frida --codeshare dzonerzy/fridantiroot -f <package-name> -U [Root Detection Bypass]
+- frida --codeshare fdciabdul/frida-multiple-bypass -f <package-name> -U [Multi Detection Bypass]
+- frida --codeshare pcipolloni/universal-android-ssl-pinning-bypass-with-frida -f <package-name> -U [SSL Pinning Bypass]
+
+## To run multiple scripts with Frida
+- frida -U -f [App ID] -l script1.js -l script2.js
+
+## Root Detection Bypass
+- Magisk > Install module MagiskHide Props Config > Conceal app icon and package name > settings > configure deny list > select <package_name> + Frida > multi bypass script
