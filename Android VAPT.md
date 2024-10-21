@@ -1,19 +1,19 @@
 # Configuration for Windows
 
-> Install Python and ADB and configure environment variables
-> pip install frida frida-tools objection
+- Install Python and ADB and configure environment variables
+- pip install frida frida-tools objection
 Install Frida server from Frida Github Releases section [Push Frida server file basis android architecture]
-> adb push frida-server-16.5.1-android-x86_64 /data/local/custom-server [create "custom-server" folder]
-> chmod 777 frida-server-16.5.1-android-x86_64
-> adb shell /data/local/custom-server/frida-server-16.5.1-android-x86_64 & [In case permission is denied run "adb shell su && /data/local/custom-server/frida-server-16.5.1-android-x86_64 &"]
+- adb push frida-server-16.5.1-android-x86_64 /data/local/custom-server [create "custom-server" folder]
+- chmod 777 frida-server-16.5.1-android-x86_64
+- adb shell /data/local/custom-server/frida-server-16.5.1-android-x86_64 & [In case permission is denied run "adb shell su && /data/local/custom-server/frida-server-16.5.1-android-x86_64 &"]
 =============================
 To verify device architecture
-> adb shell getprop ro.product.cpu.abi
+- adb shell getprop ro.product.cpu.abi
 =============================
 To convert certs
 ---------------------------
-> openssl x509 -inform der -in Burpy.der -out Burpy.pem
-> openssl x509 -inform PEM -subject_hash_old -in Burpy.pem
+- openssl x509 -inform der -in Burpy.der -out Burpy.pem
+- openssl x509 -inform PEM -subject_hash_old -in Burpy.pem
 > mv Burpy.pem 9a5ba575.0
 > adb push 9a5ba575.0 /system/etc/security/cacerts/
 
