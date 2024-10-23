@@ -13,7 +13,6 @@
    - [ ] Custom/Dangerous Permissions
    - [ ] createPackageContext
    - [ ] Dynamic Code Loading
-   - [ ] Hardcoded Cryptographic Secrets
    - [ ] Implicit Intent Hijacking
    - [ ] Activity Hijacking
    - [ ] Service Hijacking
@@ -27,7 +26,6 @@
    - [ ] Insecure M-to-M setup
    - [ ] Intent Redirection
    - [ ] RawSQL Queries in Use
-   - [ ] Unencrypted Credentials/Sensitive Information/PII/Account Metadata in Application Logs
    - [ ] Path Traversal
    - [ ] Insecure WebView Implementation (Native Bridges, Insecure URI loading)
    - [ ] Permission-bases access control to exported components
