@@ -139,6 +139,10 @@ Install Frida server from Frida Github Releases section [Push Frida server file 
 - chmod 777 frida-server-16.5.1-android-x86_64
 - adb shell /data/local/custom-server/frida-server-16.5.1-android-x86_64 & [In case permission is denied run "adb shell su && /data/local/custom-server/frida-server-16.5.1-android-x86_64 &"]
 
+# Install & Configure Magisk on Emulator
+   - https://github.com/shakalaca/MagiskOnEmulator
+   - https://systemweakness.com/rooting-emulator-and-installing-magisk-c3cbd34ec436
+
 ## To verify device architecture
 - adb shell getprop ro.product.cpu.abi
 
