@@ -156,6 +156,13 @@ Install Frida server from Frida Github Releases section [Push Frida server file 
 - mount -o remount, rw /
 - Exit the shell and push certificate.
 
+# Android Studio (Read-only system error)
+- Add "C:\Users\<User>\AppData\Local\Android\Sdk\emulator" to system path.
+- emulator -list-avds
+- emulator -avd <avd-name> -writable-system
+- adb root
+- adb remount
+
 ## Configuring Burp Proxy
 - Genymotion Emulator >> Keep NAT
 - Whatever emulator is in use  - set proxy IP as same as system's current network proxy & PORT to 8085
