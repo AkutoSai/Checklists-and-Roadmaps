@@ -1,8 +1,8 @@
 # Generic Test Cases:
    - [ ] Improper Code Obfuscation
-   - [ ] Root Detection Bypass
+   - [ ] Root Detection Bypass [With Frida/Objection, Magisk]
    - [ ] Emulator Detection Bypass
-   - [ ] SSL Pinning Bypass
+   - [ ] SSL Pinning Bypass [With Frida/Objection, Internal Certificate ".0" and installing a VPN profile/agent]
    - [ ] Dead Code Injection
    - [ ] Android - Debuggable
    - [ ] Android - Exported
@@ -153,7 +153,7 @@ Install Frida server from Frida Github Releases section [Push Frida server file 
 ## For read only file system error:
 - adb shell
 - su
-- mount -o remount, rw /
+-  "mount -o remount, rw /" or "mount -o rw,remount /" || Reset to original state "mount -o ro,remount /" [Use the commands without (")]
 - Exit the shell and push certificate.
 
 # Android Studio (Read-only system error)
