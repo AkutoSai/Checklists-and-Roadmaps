@@ -153,7 +153,7 @@ Install Frida server from Frida Github Releases section [Push Frida server file 
 ## For read only file system error:
 - adb shell
 - su
--  "mount -o remount, rw /" or "mount -o rw,remount /" || Reset to original state "mount -o ro,remount /" [Use the commands without (")]
+-  "mount -o remount, rw /" or "mount -o rw,remount /" or "mount -no rw,remount /" or "mount -o rw,remount /system" || Reset to original state "mount -o ro,remount /" [Use the commands without (")]
 - Exit the shell and push certificate.
 
 # Android Studio (Read-only system error)
