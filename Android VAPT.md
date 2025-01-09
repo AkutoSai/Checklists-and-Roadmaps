@@ -163,10 +163,12 @@ Install Frida server from Frida Github Releases section [Push Frida server file 
 - adb root
 - adb remount
 
-## Configuring Burp Proxy
+## Configuring Burp & Android Emulator Proxy
 - Genymotion Emulator >> Keep NAT
 - Whatever emulator is in use  - set proxy IP as same as system's current network proxy & PORT to 8085
 - Burp Proxy Settings - PORT to 8085 & Interface to "All"
+- Set global proxy with ADB -- "adb shell settings put global http_proxy IP:PORT"
+- Rollback to "No Proxy Setting" -- "adb shell settings put global http_proxy :0"
 
 ## Check for running services and applications in Frida in new terminal
 - frida-ps -U | frida-ps -U -a -i
