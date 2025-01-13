@@ -2,7 +2,7 @@
    - [ ] Improper Code Obfuscation
    - [ ] Root Detection Bypass [With Frida/Objection, Magisk]
    - [ ] Emulator Detection Bypass
-   - [ ] SSL Pinning Bypass [With Frida/Objection, Internal Certificate ".0" and installing a VPN profile/agent]
+   - [ ] SSL Pinning Bypass [With Frida/Objection, Internal Certificate ".0", installing a VPN profile/agent and Manual Code Tampering]
    - [ ] Dead Code Injection
    - [ ] Android - Debuggable
    - [ ] Android - Exported
@@ -46,16 +46,13 @@
    - [ ] Debug Certificate
    - [ ] Improperly Exposed Directories to FileProvider
    - [ ] Log Info Disclosure
-   - [ ] Path traversal
    - [ ] Sensitive Data Stored in External Storage
-   - [ ] Zip Path Traversal
    - [ ] Private IP Disclosure
    - [ ] Application build contains Obsolete Files
    - [ ] Android Backup Vulnerability
    - [ ] Analytics data sent to 3rd parties
    - [ ] Screen capture/screenshot
    - [ ] Applicatio Background Caching
-   - [ ] Private IP Disclosure
 
 ## Insecure Data Storage:
    - [ ] Unencrypted Credentials/Sensitive Information/PII/Account Metadata/APIs in Databases (SQLite db)
@@ -126,7 +123,6 @@
    - [ ] Misconfigured WAF
    - [ ] Misconfigured Headers
    - [ ] Potential Unwanted Ports
-   - [ ] SSL/TLS Misconfiguration (Using HTTP instead of HTTPS...)
 
 # Configuration for Windows
 
