@@ -219,3 +219,45 @@
 - [ ] **Version Control**: Implement version control for configuration backups to track changes over time.
 
 ---
+
+## Some Generic Questions (Newbie)
+
+## **1. Overview and Objectives**
+- [ ] Can you provide a brief overview of the current firewall architecture?
+- [ ] What are the primary goals or objectives of this firewall configuration review? (e.g., security hardening, performance optimization, compliance)
+- [ ] Are there any specific security or operational concerns we should address during this review?
+## **2. Current Setup**
+- [ ] What types of firewalls are currently in place (e.g., hardware, software, next-gen firewalls)?
+- [ ] Are there multiple firewall devices or only a single point of defense?
+- [ ] How are the firewalls segmented (e.g., DMZ, internal, external, remote offices)?
+- [ ] Are there any high-availability or failover configurations in place?
+## **3. Access Control Policies**
+- [ ] Can you walk us through the current rule sets for inbound and outbound traffic?
+- [ ] How are access control lists (ACLs) or rules prioritized?
+- [ ] Are there any specific rules or configurations that are critical for business operations?
+- [ ] How do you currently manage user access controls and permissions?
+## **4. Traffic and Logs**
+- [ ] What is the current logging and monitoring strategy for the firewalls?
+- [ ] Are logs being aggregated and analyzed centrally? If so, which tools are being used for this?
+- [ ] How are traffic patterns and firewall alerts reviewed and acted upon?
+- [ ] Are there any unusual or high-priority traffic patterns that have been identified recently?
+## **5. Firewall Performance and Maintenance**
+- [ ] How do you assess the performance of the firewall(s) (e.g., bandwidth, latency)?
+- [ ] Are there any known performance bottlenecks or concerns?
+- [ ] How often are firewalls updated or patched for security vulnerabilities?
+- [ ] What is the maintenance and change management process for firewall configurations?
+## **6. Security and Threat Mitigation**
+- [ ] Are there any advanced security features enabled on the firewall, such as intrusion prevention or deep packet inspection?
+- [ ] How are new vulnerabilities or threats incorporated into firewall rule updates?
+- [ ] Are there any current or past security incidents related to firewall misconfigurations?
+- [ ] What is the process for reviewing and approving firewall rule changes?
+## **7. Compliance and Standards**
+- [ ] Is the current firewall configuration aligned with any specific security standards or compliance requirements (e.g., PCI-DSS, GDPR, HIPAA)?
+- [ ] How do you ensure that firewall policies are up to date with any relevant regulatory changes?
+## **8. Incident Response and Troubleshooting**
+- [ ] What is the protocol for responding to firewall-related security incidents or breaches?
+- [ ] How is troubleshooting handled when issues arise with firewall configurations or performance?
+- [ ] Are there any common firewall-related issues that have been recurring?
+## **9. Backup and Recovery**
+- [ ] How are firewall configurations backed up?
+- [ ] What is the process for restoring firewall configurations in the event of a failure or misconfiguration?
