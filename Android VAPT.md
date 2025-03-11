@@ -31,7 +31,7 @@
    - [ ] Permission-bases access control to exported components
    - [ ] Clipboard Access
    - [ ] Sticky broadcast
-   - [ ] Android TapJacking
+   - [ ] Android TapJacking [https://github.com/dzmitry-savitski/tapjacker/releases/tag/untagged-73df61a0a60b24f1b93c]
    - [ ] StrandHogg Attack (Task Affinity Vulnerability)
    - [ ] Test and Debug feature
    - [ ] Unsafe Deserialization
