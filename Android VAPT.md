@@ -14,11 +14,11 @@
    - [ ] createPackageContext
    - [ ] Dynamic Code Loading
    - [ ] Implicit Intent Hijacking
-   - [ ] Activity Hijacking
+   - [ ] Activity Hijacking [https://github.com/cyberchoudhary09/Android-Static-Exploitation-Toolkit]
    - [ ] Service Hijacking
    - [ ] Directories exported to FileProvider
    - [ ] Insecure API/Library
-   - [ ] Insecure Broadcast Reciever
+   - [ ] Insecure Broadcast Reciever [https://github.com/cyberchoudhary09/Android-Static-Exploitation-Toolkit]
    - [ ] Boradcast thief
    - [ ] Malicious Broadcast Injection
    - [ ] Redundance Permission Granted
