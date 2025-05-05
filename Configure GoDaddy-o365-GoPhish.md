@@ -1,4 +1,4 @@
-## PS: It's better to install GoPhish on Phishing Server itself.
+## PS: It's better to install GoPhish/EvilGinx on Phishing Server itself.
 
 **Step 1:** After puchasing domain from GoDaddy, goto My Products > Scroll down to Websites & Marketing > Purchase _Microsoft 365 Email Essentials Plan_.
 
