@@ -22,7 +22,7 @@
 **Step 8:** Navigate to *https://security.microsoft.com/dkimv2* > Status for all domains shown in the Accepted List should be *Valid*. If not, toggle *Enable* option. If CNAME were properly configured status will be shown as *Valid*, If not, configure CNAME properly in Domain DNS setting in GoDaddy as shown in alert pop-up message box.
 
 **Step 9:** Go to GoPhish Sending Profile and configure as mentioned below:
-  -  SMTP-From: <Sending Domain to Bypass SPF-Checks>
+  -  SMTP-From (Sending Domain to Bypass SPF-Checks)
   -  Host: smtp.office365.com:587
   -  Username: o365 Email ID
   -  Password: One which was created while configuring email in GoDaddy
