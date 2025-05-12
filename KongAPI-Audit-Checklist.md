@@ -16,6 +16,7 @@
 - [ ] Rotated regularly?
 - [ ] Issued with the principle of least privilege?
 - [ ] Rate-limited to prevent abuse?
+- **Note: Consider OWASP Top 10 (https://apisecurity.io/owasp-api-security-top-10/)  
 
 #### JWT Security
 - [ ] Validated for signature and claims (e.g., `aud`, `iss`)?
@@ -141,6 +142,8 @@ Regular testing to identify and address security vulnerabilities.
 
 ### 3.9 Focus on Business Logic Vulnerabilities
 - [ ] Does VAPT include testing for business logic vulnerabilities that might be exposed through the APIs, which Kong might not inherently protect against?
+
+### **Note: Consider OWASP Top 10 (https://github.com/OWASP/wstg/tree/master) 
 
 ## 4. Logging and Monitoring
 
