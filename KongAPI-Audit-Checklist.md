@@ -679,3 +679,12 @@ Regular testing to identify and address security vulnerabilities.
 - [ ] Does the training cover specific API security risks and secure coding/configuration practices?
 - [ ] 25.2 Understanding of Security Policies:
 - [ ] Do all relevant personnel understand the security policies and procedures related to the Kong API Gateway?
+
+## References
+  - https://docs.konghq.com/gateway/latest/reference/configuration/
+  - https://konghq.com/blog/engineering/kafka-event-streaming-confluent-cloud
+  - https://owasp.org/projects/
+  - https://konghq.com/products/kong-gateway
+  - https://docs.pingidentity.com/pingauthorize/10.2/pingauthorize_integrations/paz_kong_error_log.html
+  - https://docs.konghq.com/gateway/latest/get-started/services-and-routes/
+  - https://github.com/AkutoSai/Checklists/blob/main/KongAPI%20Controls%201.xlsx
