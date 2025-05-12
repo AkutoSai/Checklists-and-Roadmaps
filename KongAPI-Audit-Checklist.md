@@ -66,7 +66,6 @@
 ### 1.12 Credential Stuffing Protection
 - [ ] Are measures in place to detect and mitigate credential stuffing attacks targeting authentication endpoints proxied by Kong?
 
-
 ## 2. Authorization
 
 ### 2.1 Access Control Mechanisms
@@ -108,7 +107,6 @@
 ### 2.11 Negative Authorization Testing
 - [ ] Are tests conducted to explicitly verify that unauthorized access is denied under various scenarios?
 
-
 ## 3. Vulnerability Assessment and Penetration Testing (VAPT)
 
 Regular testing to identify and address security vulnerabilities.
@@ -143,7 +141,6 @@ Regular testing to identify and address security vulnerabilities.
 
 ### 3.9 Focus on Business Logic Vulnerabilities
 - [ ] Does VAPT include testing for business logic vulnerabilities that might be exposed through the APIs, which Kong might not inherently protect against?
-
 
 ## 4. Logging and Monitoring
 
@@ -200,7 +197,6 @@ Regular testing to identify and address security vulnerabilities.
 ### 4.11 Health and Performance Monitoring Security
 - [ ] Are the health and performance monitoring endpoints of Kong (e.g., `/status`, `/metrics`) secured and restricted to authorized monitoring systems?
 
-
 ## 5. Change Management
 
 ### 5.1 Version Control
@@ -239,7 +235,6 @@ Regular testing to identify and address security vulnerabilities.
 
 ### 5.11 Immutable Infrastructure
 - [ ] Is an immutable infrastructure approach used for Kong deployments, where changes result in new instances rather than modifications to existing ones, enhancing consistency and reducing configuration drift risks?
-
 
 ## 6. Network Security
 
@@ -283,7 +278,6 @@ Regular testing to identify and address security vulnerabilities.
 ### 6.11 Protection Against SSRF
 - [ ] Are measures in place to prevent Server-Side Request Forgery (SSRF) attacks that could be initiated through Kong or the upstream services?
 
-
 ## 7. Plugin Management and Security
 
 ### 7.1 Plugin Inventory
@@ -318,7 +312,6 @@ Regular testing to identify and address security vulnerabilities.
 ### 7.10 Deprecated or Unused Plugins
 - [ ] Are deprecated or unused plugins removed from the Kong installation to reduce the attack surface?
 
-
 ## 8. Data Security
 
 ### 8.1 Encryption in Transit
@@ -348,7 +341,6 @@ Regular testing to identify and address security vulnerabilities.
 
 ### 8.9 Output Schema Enforcement
 - [ ] (Advanced) Are output schemas considered to prevent accidental or malicious exposure of internal data structures?
-
 
 ## 9. Operational Security
 
@@ -388,7 +380,6 @@ Regular testing to identify and address security vulnerabilities.
 ### 9.11 Secure Shell (SSH) Access
 - [ ] Is SSH access to the underlying hosts/containers secured using key-based authentication, with passwords disabled and access restricted to authorized personnel?
 
-
 ## 10. Compliance and Governance
 
 ### 10.1 Compliance Requirements
@@ -421,7 +412,6 @@ Regular testing to identify and address security vulnerabilities.
 
 ### 10.10 Security Metrics for Governance
 - [ ] Are key security metrics related to Kong (e.g., number of blocked attacks, time to patch critical vulnerabilities) tracked and used for governance purposes?
-
 
 ## 11. API Specific Security
 
@@ -463,7 +453,6 @@ Regular testing to identify and address security vulnerabilities.
 ### 11.12 XML External Entity (XXE) Prevention
 - [ ] If APIs process XML, are measures in place to prevent XXE vulnerabilities?
 
-
 ## 12. Incident Response
 
 ### 12.1 Incident Detection
@@ -487,7 +476,6 @@ Regular testing to identify and address security vulnerabilities.
 
 ### 12.7 Forensics Capabilities
 - [ ] Are the necessary tools and expertise available to conduct forensic analysis after a security incident?
-
 
 ## 13. Deployment and Infrastructure Security
 
@@ -516,7 +504,6 @@ Regular testing to identify and address security vulnerabilities.
 ### 13.6 Resource Isolation
 - [ ] Is resource isolation configured to prevent one compromised API or plugin from affecting the security of others running on the same Kong instance?
 
-
 ## 14. Secrets Management
 
 ### 14.1 Integration with Secrets Management System
@@ -535,7 +522,6 @@ Regular testing to identify and address security vulnerabilities.
 ### 14.5 Secure Handling of Secrets in Memory
 - [ ] Are secrets handled securely in memory by Kong and plugins, avoiding unnecessary storage or logging of sensitive values?
 
-
 ## 15. API Governance and Lifecycle Security
 
 ### 15.1 Security Requirements in API Design
@@ -550,7 +536,6 @@ Regular testing to identify and address security vulnerabilities.
 
 ### 15.4 Security Testing of API Updates
 - [ ] Are security tests executed whenever an API is updated, even for minor changes, to ensure no new vulnerabilities are introduced?
-
 
 ## 16. Rate Limiting and Bot Protection
 
@@ -571,7 +556,6 @@ Regular testing to identify and address security vulnerabilities.
 ### 16.5 Geo-Blocking/IP Restrictions
 - [ ] Are geo-blocking or IP-based restrictions used within Kong where appropriate to limit access from suspicious locations?
 
-
 ## 17. Error Handling and Exception Management
 
 ### 17.1 Generic Error Responses
@@ -583,7 +567,6 @@ Regular testing to identify and address security vulnerabilities.
 
 ### 17.3 Custom Error Pages
 - [ ] Are custom error pages configured in Kong to provide a consistent and uninformative response to clients in case of errors?
-
 
 ## 18. Advanced Plugin Security Configuration
 
@@ -627,7 +610,6 @@ Regular testing to identify and address security vulnerabilities.
 - [ ] Are credentials used within the pipeline for deploying configurations managed securely?
 - [ ] Is access to the CI/CD system restricted and audited?
 
-
 ## 20. Configuration Language Security (Declarative Config)
 
 ### 20.1 Sensitive Data in Configuration Files
@@ -640,7 +622,6 @@ Regular testing to identify and address security vulnerabilities.
 ### 20.3 Access Control to Configuration Files
 - [ ] Is access to the stored declarative configuration files restricted to authorized personnel and systems?
 
-
 ## 21. Runtime Security
 
 ### 21.1 Process Monitoring
@@ -651,7 +632,6 @@ Regular testing to identify and address security vulnerabilities.
 
 ### 21.3 File System Permissions
 - [ ] Are file system permissions on the Kong installation directory and configuration files set securely to prevent unauthorized modification?
-
 
 ## 22. Advanced Attack Vector Testing
 
@@ -667,7 +647,6 @@ Regular testing to identify and address security vulnerabilities.
 ### 22.4 HTTP Header Manipulation
 - [ ] Are tests conducted to see if manipulating HTTP headers (e.g., Host, Referer, User-Agent, custom headers) can lead to security bypasses?
 
-
 ## 23. Security Automation
 
 ### 23.1 Automated Security Testing Integration
@@ -678,7 +657,6 @@ Regular testing to identify and address security vulnerabilities.
 
 ### 23.3 Automated Security Compliance Checks
 - [ ] Are automated checks performed regularly to verify that the Kong configuration and deployment adhere to defined security compliance requirements?
-
 
 ## 24. Specific Deployment Model Security
 
@@ -696,6 +674,5 @@ Regular testing to identify and address security vulnerabilities.
 ### 25.1 Regular Security Training
 - [ ] Is regular security training provided to all personnel involved in managing, operating, and developing APIs exposed through Kong?
 - [ ] Does the training cover specific API security risks and secure coding/configuration practices?
-
-[ ] 25.2 Understanding of Security Policies:
-[ ] Do all relevant personnel understand the security policies and procedures related to the Kong API Gateway?
+- [ ] 25.2 Understanding of Security Policies:
+- [ ] Do all relevant personnel understand the security policies and procedures related to the Kong API Gateway?
