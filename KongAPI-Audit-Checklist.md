@@ -143,7 +143,7 @@ Regular testing to identify and address security vulnerabilities.
 ### 3.9 Focus on Business Logic Vulnerabilities
 - [ ] Does VAPT include testing for business logic vulnerabilities that might be exposed through the APIs, which Kong might not inherently protect against?
 
-### **Note: Consider OWASP Top 10 (https://github.com/OWASP/wstg/tree/master) 
+### **Note: Consider OWASP Top 10 (https://apisecurity.io/owasp-api-security-top-10/) 
 
 ## 4. Logging and Monitoring
 
