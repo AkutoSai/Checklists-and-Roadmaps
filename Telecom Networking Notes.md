@@ -748,9 +748,9 @@ Attach Request {
   EPS Bearer Context Status
   NAS Security Parameters
 }
+```
 
-
-### **References**
+#### **References**
 
 1. What Is PSTN and How Does It Work? \- Nextiva, accessed on July 11, 2025, [https://www.nextiva.com/blog/what-is-pstn.html](https://www.nextiva.com/blog/what-is-pstn.html)  
 2. The Evolution of the Public Switched Telephone Network \- Sobot, accessed on July 11, 2025, [https://www.sobot.io/article/evolution-public-switched-telephone-network/](https://www.sobot.io/article/evolution-public-switched-telephone-network/)  
