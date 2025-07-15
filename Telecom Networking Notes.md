@@ -749,6 +749,70 @@ Attach Request {
   NAS Security Parameters
 }
 ```
+**Authentication Request (NAS Message)**
+
+```plaintext
+Copy
+Edit
+Authentication Request {
+  RAND: 128-bit random challenge
+  AUTN: Authentication token to validate network authenticity
+}
+```
+
+**Authentication Response (NAS Message)**
+
+```plaintext
+Copy
+Edit
+Authentication Response {
+  RES: Response to RAND, proving UE knowledge of secret key
+}
+```
+
+**Security Mode Command (NAS Message)**
+
+```plaintext
+Copy
+Edit
+Security Mode Command {
+  Selected Integrity Algorithm: EIA2 (AES)
+  Selected Ciphering Algorithm: EEA2 (AES)
+  NAS Count
+}
+```
+
+**Attach Accept (NAS Message)**
+
+```plaintext
+Copy
+Edit
+Attach Accept {
+  EPS Mobile Identity: GUTI
+  TAI List: Allowed tracking areas
+  EPS Bearer Context: Default bearer parameters
+  APN Configuration Profile
+}
+```
+
+**Attach Complete (NAS Message)**
+
+```plaintext
+Copy
+Edit
+Attach Complete {
+  EPS Mobile Identity: GUTI
+}
+```
+The NAS (Non-Access Stratum) layer handles signaling between UE and MME, encapsulated within RRC messages on the Uu interface.
+
+Authentication vectors exchanged over Diameter on the S6a interface ensure subscriber validation.
+
+The GTP-C messages on S1 interface handle session and bearer management for user data.
+
+Security algorithms are negotiated and applied to protect signaling and data confidentiality/integrity.
+
+---
 
 #### **References**
 
