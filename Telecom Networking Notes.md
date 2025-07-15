@@ -443,91 +443,87 @@ A telephone numbering plan is a systematic method for assigning unique numerical
 
 The concept of numbering plans dates back to the early days of telephony, with manual switchboards and simple numbering schemes. As telecommunications evolved, the complexity and scope of numbering plans expanded, leading to national and international plans that enabled global connectivity and standardized communication practices. The International Telecommunication Union (ITU) has played a crucial role in developing and maintaining global numbering standards.45
 
-The international standard for telephone numbering is **E.164**, established by the ITU.46 This comprehensive numbering plan ensures uniform interoperability of networks among its member states or regional administrations.46 E.164 imposes a maximum length of 15 digits for telephone numbers.46 The standard defines a unique country code for each member region, which is prefixed to each national telephone number for international destination routing.46 When dialing an international number, the country code is typically prefixed with a plus sign (+) in listings (e.g., \+1 for the United States, \+44 for the United Kingdom) to remind the subscriber to dial their country's international access code (e.g., 011 in North America, 00 in most other countries).45
+The international standard for telephone numbering is **E.164**, established by the ITU. This comprehensive numbering plan ensures uniform interoperability of networks among its member states or regional administrations. E.164 imposes a maximum length of 15 digits for telephone numbers. The standard defines a unique country code for each member region, which is prefixed to each national telephone number for international destination routing. When dialing an international number, the country code is typically prefixed with a plus sign (+) in listings (e.g., \+1 for the United States, \+44 for the United Kingdom) to remind the subscriber to dial their country's international access code (e.g., 011 in North America, 00 in most other countries).
 
-A typical numbering plan structure consists of a combination of numerical digits, structured in a specific format: Country Code, National Destination Code (which may include an Area Code and Network Identifier), and Subscriber Number.45 Country codes identify a specific country or region, while area codes identify a particular geographic region within a country.45 The ITU allocates country codes, while national regulatory bodies typically manage area code allocation.45
+A typical numbering plan structure consists of a combination of numerical digits, structured in a specific format: Country Code, National Destination Code (which may include an Area Code and Network Identifier), and Subscriber Number. Country codes identify a specific country or region, while area codes identify a particular geographic region within a country. The ITU allocates country codes, while national regulatory bodies typically manage area code allocation.
 
 There are two primary types of numbering plans:
 
-* **National Numbering Plans:** These are used within a specific country or region and are designed to meet the unique needs of that area. Examples include the North American Numbering Plan (NANP) and the UK's national numbering plan.45  
-* **International Numbering Plans:** Governed by the ITU, these plans facilitate global communication by providing a standardized framework for country codes, international prefixes, and other global numbering requirements.45
+* **National Numbering Plans:** These are used within a specific country or region and are designed to meet the unique needs of that area. Examples include the North American Numbering Plan (NANP) and the UK's national numbering plan.  
+* **International Numbering Plans:** Governed by the ITU, these plans facilitate global communication by providing a standardized framework for country codes, international prefixes, and other global numbering requirements.
 
-The ITU also defines certain prefixes for special services (e.g., 800 for International Freephone, 881 for Global Mobile Satellite System) and assigns codes for independent international networks like satellite systems.46 Some integrated telephone numbering plans allow multiple countries to share a single ITU country code, such as the North American Numbering Plan, which comprises 25 countries and territories, or World Numbering Zone 7, which includes Russia and Kazakhstan.46
+The ITU also defines certain prefixes for special services (e.g., 800 for International Freephone, 881 for Global Mobile Satellite System) and assigns codes for independent international networks like satellite systems. Some integrated telephone numbering plans allow multiple countries to share a single ITU country code, such as the North American Numbering Plan, which comprises 25 countries and territories, or World Numbering Zone 7, which includes Russia and Kazakhstan.
 
-National regulatory bodies and international organizations like the ITU play a crucial role in shaping and maintaining numbering plans, establishing standards and guidelines for their structure, format, country code and area code allocation, number portability, and overall management.45
-
-Numbering and addressing schemes are far more than just sequences of digits; they form a global, hierarchical semantic layer that allows disparate telecom networks to understand and route calls and services to the correct destination, regardless of physical location or underlying technology. They are the foundational "language" that enables seamless communication across the world, orchestrating complex routing decisions and supporting advanced services like intelligent networks and mobile roaming. Their standardization is a testament to the need for global cooperation in telecommunications. The robustness and universality of numbering plans (like E.164) are critical for the continued functioning of the global telecom ecosystem, even as services transition to IP. While IP addresses handle data routing, telephone numbers remain the primary user-facing identifier for voice and SMS services, requiring complex translation and interworking mechanisms between the two addressing worlds. The ongoing management of these plans, including new allocations for emerging services (e.g., IoT), is a continuous regulatory and technical challenge.
+National regulatory bodies and international organizations like the ITU play a crucial role in shaping and maintaining numbering plans, establishing standards and guidelines for their structure, format, country code and area code allocation, number portability, and overall management.
 
 ### **8.2. IP Addressing (IPv4 and IPv6)**
 
-IP addresses are unique numerical identifiers assigned to every device connected to an IP network, enabling communication by identifying source and destination hosts.15 The Internet Protocol (IP) is fundamental for ensuring that data packets reach their intended destination correctly.15
+IP addresses are unique numerical identifiers assigned to every device connected to an IP network, enabling communication by identifying source and destination hosts. The Internet Protocol (IP) is fundamental for ensuring that data packets reach their intended destination correctly.
 
 * **IPv4 (Internet Protocol version 4):**  
-  * **Overview:** IPv4 is the dominant protocol of the internet and the underlying technology that enables devices to connect to the web.16  
-  * **Address Format:** It uses a 32-bit address format, typically represented as four sets of numbers separated by periods (e.g., 99.48.227.227).47  
-  * **Limitations:** IPv4 supports approximately 4.29 billion unique IP addresses (2^32).47 Due to the widespread proliferation of connected devices, all IPv4 addresses have now been assigned, leading to an address shortage.47 This shortage necessitated solutions like Network Address Translation (NAT) to allow multiple devices to share a single public IP address.47  
+  * **Overview:** IPv4 is the dominant protocol of the internet and the underlying technology that enables devices to connect to the web.  
+  * **Address Format:** It uses a 32-bit address format, typically represented as four sets of numbers separated by periods (e.g., 99.48.227.227).  
+  * **Limitations:** IPv4 supports approximately 4.29 billion unique IP addresses (2^32). Due to the widespread proliferation of connected devices, all IPv4 addresses have now been assigned, leading to an address shortage. This shortage necessitated solutions like Network Address Translation (NAT) to allow multiple devices to share a single public IP address.  
 * **IPv6 (Internet Protocol version 6):**  
-  * **Overview:** IPv6 is the sixth revision of the Internet Protocol and the designated successor to IPv4, intended to supplement and eventually replace it.16  
-  * **Address Format:** It utilizes a 128-bit IP address.47 The text form of an IPv6 address is typically represented as eight groups of four hexadecimal digits separated by colons (xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx).47 Leading zeros within each group can be omitted, and a double colon (::) can be used once in an address to represent any number of consecutive zero bits.47  
-  * **Address Space:** IPv6 supports an astronomically larger number of addresses (2^128), which is 10^28 times larger than IPv4's address space. This vast capacity virtually eliminates concerns about address shortage for the foreseeable future.47  
+  * **Overview:** IPv6 is the sixth revision of the Internet Protocol and the designated successor to IPv4, intended to supplement and eventually replace it.  
+  * **Address Format:** It utilizes a 128-bit IP address. The text form of an IPv6 address is typically represented as eight groups of four hexadecimal digits separated by colons (xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx). Leading zeros within each group can be omitted, and a double colon (::) can be used once in an address to represent any number of consecutive zero bits.  
+  * **Address Space:** IPv6 supports an astronomically larger number of addresses (2^128), which is 10^28 times larger than IPv4's address space. This vast capacity virtually eliminates concerns about address shortage for the foreseeable future.  
   * **Key Benefits:** IPv6 offers several significant advantages beyond just address quantity:  
-    * **No more NAT:** It eliminates the need for Network Address Translation, simplifying network design and improving end-to-end connectivity.47  
-    * **Auto-configuration:** Supports stateless address auto-configuration, making network administration easier without the need for DHCP in many cases.47  
-    * **No private address collisions:** Prevents IP address conflicts when merging or connecting different networks.47  
-    * **Better multicast routing:** Provides more efficient delivery of messages to groups of nodes.47  
-    * **Simpler header format:** Streamlines packet processing by routers.47  
-    * **Simplified, more efficient routing:** Improves overall network performance.47  
-    * **True Quality of Service (QoS):** Includes "flow labeling" for better QoS support.47  
-    * **Built-in authentication and privacy support:** Offers enhanced security features natively.47  
-    * **Flexible options and extensions:** Allows for future growth and the integration of new functionalities.47
+    * **No more NAT:** It eliminates the need for Network Address Translation, simplifying network design and improving end-to-end connectivity.  
+    * **Auto-configuration:** Supports stateless address auto-configuration, making network administration easier without the need for DHCP in many cases.  
+    * **No private address collisions:** Prevents IP address conflicts when merging or connecting different networks.  
+    * **Better multicast routing:** Provides more efficient delivery of messages to groups of nodes.  
+    * **Simpler header format:** Streamlines packet processing by routers.  
+    * **Simplified, more efficient routing:** Improves overall network performance.  
+    * **True Quality of Service (QoS):** Includes "flow labeling" for better QoS support.  
+    * **Built-in authentication and privacy support:** Offers enhanced security features natively.  
+    * **Flexible options and extensions:** Allows for future growth and the integration of new functionalities.
 
-**Deployment (Dual-Stack):** During the transition period, computers, routers, switches, and other devices often run both IPv4 and IPv6 protocols simultaneously, a configuration known as dual-stack.47 In such environments, IPv6 is typically preferred.47 The deployment of IPv6 usually begins with the Wide Area Network (WAN) core routers, then perimeter routers and firewalls, followed by data-center routers, and finally the desktop access routers.47
-
-IP addressing serves as the scalability enabler for the digital universe. The exhaustion of IPv4 addresses, due to the rapid proliferation of connected devices, highlighted a fundamental limitation in the internet's original addressing scheme.47 IPv6, with its vastly expanded 128-bit address space, effectively eliminates this constraint, providing more than enough addresses to accommodate the exponential growth of internet-enabled devices for a very long time.47 Beyond mere quantity, IPv6's design improvements—such as simplified routing, auto-configuration, and built-in security features—address key challenges faced by IPv4, contributing to a more efficient, robust, and scalable internet infrastructure. This transition is not just about assigning more numbers but about building a more resilient and capable foundation for the future of digital communication, essential for supporting the diverse demands of IoT, smart cities, and other emerging technologies.
+**Deployment (Dual-Stack):** During the transition period, computers, routers, switches, and other devices often run both IPv4 and IPv6 protocols simultaneously, a configuration known as dual-stack. In such environments, IPv6 is typically preferred. The deployment of IPv6 usually begins with the Wide Area Network (WAN) core routers, then perimeter routers and firewalls, followed by data-center routers, and finally the desktop access routers.
 
 ## **9\. OSS and BSS Systems**
 
 ### **9.1. Operational Support Systems (OSS)**
 
-OSS focuses on managing and analyzing a telecom company's internal network operations.49 It is network-facing, meaning its primary goal is to keep the network running smoothly and efficiently.49 OSS encompasses both the hardware components of the network (like routers, servers, and computers) and the software used to power these devices and control the telecom network.49
+OSS focuses on managing and analyzing a telecom company's internal network operations. It is network-facing, meaning its primary goal is to keep the network running smoothly and efficiently. OSS encompasses both the hardware components of the network (like routers, servers, and computers) and the software used to power these devices and control the telecom network.
 
 Typical functions of OSS include:
 
-* **Network Monitoring:** Continuously keeping tabs on the health and performance of the entire telecom infrastructure.49  
-* **Resource and Inventory Monitoring:** Managing and tracking network resources, such as available bandwidth, equipment, and connections.49  
-* **Fault Management:** Identifying, diagnosing, and resolving network issues and outages to minimize service interruptions and ensure network uptime.49 This includes tracking how quickly problems are identified and fixed.50  
-* **Service Provisioning:** Activating and configuring services and connections for customers, such as SIM provisioning for mobile subscribers.49  
-* **Network Configuration:** Managing the configuration of network devices and ensuring optimal network performance.49
+* **Network Monitoring:** Continuously keeping tabs on the health and performance of the entire telecom infrastructure.  
+* **Resource and Inventory Monitoring:** Managing and tracking network resources, such as available bandwidth, equipment, and connections.  
+* **Fault Management:** Identifying, diagnosing, and resolving network issues and outages to minimize service interruptions and ensure network uptime. This includes tracking how quickly problems are identified and fixed.  
+* **Service Provisioning:** Activating and configuring services and connections for customers, such as SIM provisioning for mobile subscribers.  
+* **Network Configuration:** Managing the configuration of network devices and ensuring optimal network performance.
 
-An example of OSS in action would be a telecom provider using OSS tools to monitor its 5G network, ensuring optimal performance and minimal downtime.50
+An example of OSS in action would be a telecom provider using OSS tools to monitor its 5G network, ensuring optimal performance and minimal downtime.
 
 ### **9.2. Business Support Systems (BSS)**
 
-BSS manages a telecom company's customer-facing business operations.49 It covers the overall customer experience, from initial onboarding to ongoing service management, billing, and support.49 BSS is typically a collection of software programs, data platforms, and billing solutions.49
+BSS manages a telecom company's customer-facing business operations. It covers the overall customer experience, from initial onboarding to ongoing service management, billing, and support. BSS is typically a collection of software programs, data platforms, and billing solutions.
 
 Typical functions of BSS include:
 
-* **Customer Relationship Management (CRM):** Managing customer interactions, support, and relationships.49  
-* **Billing:** Accurately calculating and processing charges for services, including revenue reporting and business analytics.49 This is a core function of BSS.50  
-* **Order Management:** Ensuring that customer orders for services are processed and delivered on time.49  
-* **Product Marketing & Subscriptions:** Managing product offerings, subscriptions, and notifications to customers.49  
-* **Workflow Optimization and Issue Resolution:** Streamlining business processes and handling customer-reported issues.49
+* **Customer Relationship Management (CRM):** Managing customer interactions, support, and relationships.  
+* **Billing:** Accurately calculating and processing charges for services, including revenue reporting and business analytics. This is a core function of BSS.  
+* **Order Management:** Ensuring that customer orders for services are processed and delivered on time.  
+* **Product Marketing & Subscriptions:** Managing product offerings, subscriptions, and notifications to customers.  
+* **Workflow Optimization and Issue Resolution:** Streamlining business processes and handling customer-reported issues.
 
-An example of BSS in action would be a BSS system managing customer billing for a Mobile Virtual Network Operator (MVNO) offering bundled mobile, internet, and TV services.50
+An example of BSS in action would be a BSS system managing customer billing for a Mobile Virtual Network Operator (MVNO) offering bundled mobile, internet, and TV services.
 
 ### **9.3. How OSS and BSS Work Together**
 
-OSS runs the network, while BSS monetizes the business operations.49 These two systems cannot operate effectively in isolation; their strategies must be closely integrated to provide dependable connectivity, drive sustainable growth, and offer superior customer service experiences.49
+OSS runs the network, while BSS monetizes the business operations. These two systems cannot operate effectively in isolation; their strategies must be closely integrated to provide dependable connectivity, drive sustainable growth, and offer superior customer service experiences.
 
 Their collaboration is evident in processes such as:
 
-* **Order Fulfillment:** When a customer places an order via the BSS, the BSS sends this request to the OSS for the technical activation and provisioning of the service.50  
-* **Service Assurance:** OSS continuously monitors network performance and shares real-time data with BSS. This data is crucial for ensuring billing accuracy and maintaining customer satisfaction by providing insights into service quality.50  
-* **Fault Resolution:** If a network issue arises, OSS identifies and resolves it. Simultaneously, it notifies the BSS, which can then update customers about service restoration, managing customer expectations.50
+* **Order Fulfillment:** When a customer places an order via the BSS, the BSS sends this request to the OSS for the technical activation and provisioning of the service.  
+* **Service Assurance:** OSS continuously monitors network performance and shares real-time data with BSS. This data is crucial for ensuring billing accuracy and maintaining customer satisfaction by providing insights into service quality.  
+* **Fault Resolution:** If a network issue arises, OSS identifies and resolves it. Simultaneously, it notifies the BSS, which can then update customers about service restoration, managing customer expectations.
 
-Key Performance Indicators (KPIs) for measuring success highlight their distinct yet complementary roles: OSS success is measured by network uptime, latency, and fault resolution time, while BSS success is measured by churn rate, Average Revenue Per User (ARPU), and billing accuracy.50
+Key Performance Indicators (KPIs) for measuring success highlight their distinct yet complementary roles: OSS success is measured by network uptime, latency, and fault resolution time, while BSS success is measured by churn rate, Average Revenue Per User (ARPU), and billing accuracy.
 
-The evolution of telecommunications, particularly with the rise of IoT, demands more flexible and scalable operations and business solutions than traditional legacy OSS/BSS systems can provide.49 Legacy systems are often too rigid, cumbersome, and expensive to support the volume, complexity, and billing requirements introduced by millions of low-data, low-touch IoT devices.49 Modern OSS/BSS solutions need to support elastic resource scaling, cloud-native architectures, and microservices-based approaches to facilitate simplified maintenance and quicker development cycles.49 This transformation aims to enhance scalability and flexibility, reduce costs by eliminating legacy infrastructure dependencies, and leverage AI and automation to improve operational efficiency.50
+Modern OSS/BSS solutions need to support elastic resource scaling, cloud-native architectures, and microservices-based approaches to facilitate simplified maintenance and quicker development cycles. This transformation aims to enhance scalability and flexibility, reduce costs by eliminating legacy infrastructure dependencies, and leverage AI and automation to improve operational efficiency.
 
 ## 10. Different Interfaces in Telecom Network
 
