@@ -1,4 +1,6 @@
-# **Comprehensive Aviation CyberSec & OT Security Checklist (Compiled from various sources)**
+# **Comprehensive Aviation CyberSec & OT Security Checklist**
+
+**Compiled from various sources (Symposiums, Research Papers etc.)**
 
 ## **1\. Aviation Cyber Security (General)**
 
