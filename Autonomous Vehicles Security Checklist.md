@@ -196,13 +196,308 @@
    - [ ] Assess the physical security measures of the smart car, such as keyless entry systems, immobilizers, or alarm systems.
    - [ ] Test for vulnerabilities in keyless entry systems, including relay attacks or signal interception.
    - [ ] Verify if physical tampering or manipulation of components can lead to unauthorized access or control over the smart car.
+   
+## Governance & Management (UN R155 & ISO 21434\)**
+
+*Focus: Organizational processes, CSMS, and Supply Chain.*
+
+* \[ \] **Organizational Cybersecurity Management (Clause 5\)**  
+  * \[ \] **Cybersecurity Policy:** Confirm a policy exists acknowledging cybersecurity as a priority.  
+  * \[ \] **Rules & Processes:** Verify processes are defined for all lifecycle phases (concept to decommissioning).  
+  * \[ \] **Competence Management:** Ensure personnel have documented training/competence in automotive security.  
+  * \[ \] **Audit Trails:** Confirm a continuous improvement process (Management Systems Audit) is active.  
+* \[ \] **Project Dependent Management (Clause 6\)**  
+  * \[ \] **Cybersecurity Plan:** Define roles, responsibilities, and dependency management for the specific project.  
+  * \[ \] **Reuse Analysis:** Analyze carry-over parts (legacy ECUs) for security gaps against modern standards.  
+  * \[ \] **Cybersecurity Case:** Maintain a living repository of all security work products (TARA, requirements, validation reports).  
+  * \[ \] **Release for Post-Development:** Confirm security acceptance criteria are met before release.  
+* \[ \] **Distributed Cybersecurity Activities (Clause 7 \- Supply Chain)**  
+  * \[ \] **CIA Agreements:** Verify Cybersecurity Interface Agreements (CIAD) are signed with all Tier-1 suppliers.  
+  * \[ \] **Supplier Capability:** Check evidence of supplier's own CSMS (e.g., TISAX assessment or ISO 21434 audit).  
+  * \[ \] **Alignment:** Ensure supplier security activities are aligned with the OEM's Cybersecurity Plan.  
+  * \[ \] **SBOM Management:** Ensure Software Bill of Materials (SBOM) is collected for all 3rd party libraries to track CVEs.  
+* \[ \] **Third-Party Assessments**  
+  * \[ \] **Independent Audits:** Engage third-party experts to perform independent audits of the security posture.  
+  * \[ \] **Bug Bounty:** Consider bug bounty programs to incentivize external researchers to report vulnerabilities.
+
+## Threat Analysis & Risk Assessment (TARA \- ISO 21434 Clause 15\)**
+
+*Focus: Risk identification and CAL determination.*
+
+* \[ \] **Asset Identification (Clause 15.3)**  
+  * \[ \] **Data Assets:** Keys, PII, Calibration Data, Logs, Maps, Biometric templates.  
+  * \[ \] **Functional Assets:** Braking, Steering, Acceleration, Battery Management, ADAS perception, Driver Monitoring.  
+* \[ \] **Threat Scenario Identification (Clause 15.5)**  
+  * \[ \] Map threats to damage scenarios (e.g., "Unintended braking", "Privacy leak", "Fleet-wide ransom").  
+* \[ \] **Impact Rating (Clause 15.6)**  
+  * \[ \] **Safety (SF):** Map to ISO 26262 ASIL levels (e.g., SF impacts \> ASIL B require stricter controls).  
+  * \[ \] **Privacy (PM):** Assess impact of location tracking, voice recording, or camera feed interception.  
+  * \[ \] **Financial (FM) & Operational (OM):** Rate impacts on fleet operations and recall costs.  
+* \[ \] **Attack Path Analysis (Clause 15.7)**  
+  * \[ \] **Attack Feasibility:** Evaluate based on Time, Expertise, Knowledge, Window of Opportunity, and Equipment.  
+* \[ \] **Risk Determination (Clause 15.8)**  
+  * \[ \] **Risk Value:** Classify risk (1-5) based on Impact vs. Feasibility matrix.  
+* \[ \] **Risk Treatment Decision (Clause 15.9)**  
+  * \[ \] **Treatment Options:** Select Avoid, Mitigate, Share/Transfer, or Accept.  
+  * \[ \] **Cybersecurity Goals:** Define high-level goals for treated risks (e.g., "Prevent spoofing of braking commands").  
+  * \[ \] **Cybersecurity Claims:** Document rationale for any "Risk Acceptance" (must be signed by mgmt).
+
+## System Design & Architecture (Trust Anchors)**
+
+*Focus: Hardware security foundations.*
+
+* \[ \] **Secure Boot & Root of Trust (RoT)**  
+  * \[ \] **Immutable RoT:** Verify the first instruction runs from immutable memory (Boot ROM).  
+  * \[ \] **Public Key Storage:** Ensure Root Public Key hash is burned into OTP (One-Time Programmable) fuses.  
+  * \[ \] **Fallback Mechanism:** Define behavior if verification fails (e.g., stay in Bootloader, do not boot OS).  
+  * \[ \] **JTAG/Debug Lockdown:** Confirm JTAG is disabled via fuses in production (or protected by strong challenge-response).  
+* \[ \] **Hardware Security Module (HSM) / Secure Enclave**  
+  * \[ \] **Isolation:** Verify HSM runs on a dedicated core with private RAM/Flash.  
+  * \[ \] **Side-Channel Protection:** Check resistance against DPA (Differential Power Analysis) and SPA.  
+  * \[ \] **Secure Time:** Verify HSM manages a secure monotonic counter/timer (prevent rollback/replay).  
+  * \[ \] **Crypto Primitives:** Ensure hardware acceleration for AES, ECC (P-256/Ed25519), and SHA-2/3.  
+* \[ \] **Memory Protection**  
+  * \[ \] **MPU/MMU:** Verify memory partitioning between Safety, Security, and App domains.  
+  * \[ \] **ASLR/NX:** Ensure Address Space Layout Randomization and No-Execute bits are active.
+
+## Cryptographic Implementation (AUTOSAR & Key Mgmt)**
+
+*Focus: Crypto stack and lifecycle management.*
+
+* \[ \] **AUTOSAR Crypto Stack**  
+  * \[ \] **CSM (Crypto Service Manager):** Verify asynchronous job processing priority (Safety \> Entertainment).  
+  * \[ \] **CryIf (Interface):** Ensure proper channel mapping to hardware (HSM) vs software primitives.  
+  * \[ \] **KeyM (Key Manager):** Verify certificate parsing and key verification logic.  
+* \[ \] **Key Lifecycle Management**  
+  * \[ \] **Generation:** Keys generated on-board must use a TRNG (AIS-31 compliant).  
+  * \[ \] **Injection:** Production keys must be injected in a secure environment (clean room) or via HSM-based secure provisioning.  
+  * \[ \] **Storage:** Keys must never be in source code or plain text flash. Use HSM slots or encrypted key blobs (shielded by a master key).  
+  * \[ \] **Destruction:** Verify "Factory Reset" securely wipes user data and ephemeral keys.  
+* \[ \] **Algorithms & Suites**  
+  * \[ \] **Symmetric:** AES-128/256 (GCM for auth-enc, CBC with HMAC). Avoid ECB.  
+  * \[ \] **Asymmetric:** ECC (NIST P-256, Brainpool) for resource-constrained ECUs; RSA-2048/4096 for powerful nodes.  
+  * \[ \] **Hashing:** SHA-256 or SHA-3. Avoid SHA-1 and MD5.
+
+## In-Vehicle Network Security (SecOC & Ethernet)**
+
+*Focus: Protecting CAN, LIN, and Automotive Ethernet.*
+
+* \[ \] **Secure Onboard Communication (SecOC)**  
+  * \[ \] **Freshness:** Verify implementation of Freshness Value Manager (FVM) (Timestamp or Counter based).  
+  * \[ \] **MAC Truncation:** Ensure truncated MAC (e.g., 24 bits) provides sufficient collision resistance for the bus load.  
+  * \[ \] **Data ID:** Verify binding of MAC to the specific Message ID to prevent masquerading.  
+* \[ \] **Automotive Ethernet Security**  
+  * \[ \] **VLAN Segmentation:** Separate Infotainment, Telematics, and Safety critical traffic.  
+  * \[ \] **Firewalling:** Implement ingress/egress filtering on the Gateway Switch.  
+  * \[ \] **SOME/IP Security:** Use TLS or DTLS for service-oriented communication.  
+  * \[ \] **MACsec:** Enable IEEE 802.1AE (MACsec) for link-layer encryption if hardware supports it.  
+* \[ \] **Intrusion Detection System (IDS)**  
+  * \[ \] **IdsM (IDS Manager):** Verify reporting of "Smart Sensors" (reporting security events) to the IdsM.  
+  * \[ \] **Heuristics:** Check for checks on message frequency, payload range, and invalid sequence IDs.  
+* \[ \] **CAN Bus Penetration Testing (Detailed)**  
+  * \[ \] **Message Injection:** Send malformed/invalid messages to test resilience against spoofing.  
+  * \[ \] **Bus Off Recovery:** Flood the bus to test error recovery and resumption of normal operations.  
+  * \[ \] **Replay Attacks:** Capture and replay legitimate messages to test protection (Freshness/Counter checks).  
+  * \[ \] **Bus Monitoring:** Deploy tools to analyze traffic for anomalies, unknown devices, or suspicious payloads.  
+  * \[ \] **ECU Authentication:** Verify only authorized ECUs communicate; test digital signatures/secure key exchanges.  
+  * \[ \] **Data Integrity:** Modify CAN payloads to test if the system detects tampering (MAC checks).  
+  * \[ \] **Bus Isolation:** Test if an attack on one ECU (e.g., Infotainment) is contained from Safety CAN.  
+  * \[ \] **Bus Load Analysis:** specific test of security features under high bus load conditions.  
+  * \[ \] **Error Handling:** Introduce deliberate errors to test fault tolerance without security compromise.  
+  * \[ \] **DoS Resilience:** Test resistance against Denial-of-Service targeting the CAN bus.  
+  * \[ \] **Network Segmentation:** Evaluate isolation between critical and non-critical segments.  
+  * \[ \] **Redundancy:** Test failover mechanisms for data integrity during component failures.
+
+## Diagnostics & Ports (UDS & OBD-II)**
+
+*Focus: Access control for maintenance interfaces.*
+
+* \[ \] **UDS Security (ISO 14229\)**  
+  * \[ \] **Service 0x27 (Security Access):**  
+    * \[ \] **Entropy:** Seeds must be random (TRNG). Fixed seeds are a critical fail.  
+    * \[ \] **Delay:** Enforce 10s+ delay after 3 failed attempts.  
+    * \[ \] **Levels:** Segregate "Read Only", "Write", and "Reprogramming" privileges.  
+  * \[ \] **Service 0x29 (Authentication):** Implement certificate-based auth for modern architectures (PKI based).  
+  * \[ \] **Service Routing:** Ensure the Gateway blocks critical UDS commands (e.g., ECU Reset, Write Memory) routed from OBD-II to Safety CAN while driving.  
+* \[ \] **Physical Ports & Security**  
+  * \[ \] **OBD-II Firewall:** The gateway must filter raw CAN frames from the OBD port unless an authenticated session is active.  
+  * \[ \] **USB/Ethernet Ports:** Disable auto-mount and auto-run features on IVI ports.  
+  * \[ \] **Anti-Theft:** Assess immobilizers and tracking systems; ensure they cannot be easily bypassed.  
+  * \[ \] **Access Restriction:** Restrict physical access to critical ECUs and diagnostic ports.
+
+## Connectivity & V2X Security**
+
+*Focus: Wireless interfaces and vehicle-to-everything.*
+
+* \[ \] **V2X / V2G (Vehicle-to-Grid)**  
+  * \[ \] **IEEE 1609.2:** Verify usage of geometric/region-specific certificates.  
+  * \[ \] **Pseudonymity:** Ensure certificates rotate frequently (e.g., every 5 mins or 1km) to prevent tracking.  
+  * \[ \] **Misbehavior Detection:** Verify vehicle validates received Basic Safety Messages (BSM) for plausibility (position/speed consistency).  
+  * \[ \] **ISO 15118 (Plug & Charge):** Verify TLS mutual authentication between Vehicle (EVCC) and Charger (SECC).  
+* \[ \] **Telematics & Cloud**  
+  * \[ \] **APN:** Use a private APN for vehicle telemetry; do not use public internet addresses for ECUs.  
+  * \[ \] **Mutual TLS (mTLS):** Vehicle and Cloud must authenticate each other via certificates.  
+  * \[ \] **SMS:** Disable SMS-based commands or require cryptographic signatures in the payload.  
+* \[ \] **Remote Access & Mobile Apps**  
+  * \[ \] **App Security:** Test mobile apps/web interfaces for auth vulnerabilities, session management, and data transmission.  
+  * \[ \] **Credential Stuffing:** Test against automated login attempts using stolen credentials.  
+  * \[ \] **Robustness:** Test rate limiting, account lockouts, and intrusion detection on remote endpoints.  
+  * \[ \] **Communication Channels:** Verify encryption and integrity of APIs used for remote control (unlock/start).  
+  * \[ \] **Exploitation:** Attempt to exploit remote access to gain unauthorized control.
+
+## Software Updates (OTA & SUMS)**
+
+*Focus: Safe and secure updates.*
+
+* \[ \] **Uptane Framework / UN R156**  
+  * \[ \] **Separation of Duties:** Verify separation between "Image Repository" and "Director Repository".  
+  * \[ \] **Metadata Verification:** ECU must verify root metadata (signatures from multiple offline keys) before trusting the update.  
+  * \[ \] **Time Server:** Ensure secure time source to prevent "Freeze" attacks (forcing vehicle to use old, vulnerable software).  
+* \[ \] **Update Process**  
+  * \[ \] **Rollback:** Automatic rollback to previous slot (A/B partitioning) if the new image fails to boot/authenticate.  
+  * \[ \] **Pre-conditions:** Check for "Vehicle Stopped", "Gear in Park", "Battery \> X%" before flashing.  
+  * \[ \] **Compatibility:** Verify new software version compatibility with existing hardware components.
+
+## Operating System Hardening (Linux / Android / QNX)**
+
+*Focus: High-compute nodes (IVI, ADAS).*
+
+* \[ \] **Filesystem & Data Protection**  
+  * \[ \] **dm-verity:** Read-only root filesystem with integrity verification.  
+  * \[ \] **Encryption:** User data partition (contacts, logs) must be encrypted (e.g., fscrypt/LUKS).  
+  * \[ \] **Data Wiping:** Verify secure data deletion mechanisms for decommissioning/selling.  
+* \[ \] **Access Control**  
+  * \[ \] **SELinux / AppArmor:** Enforce Mandatory Access Control (MAC) policies. No process runs as unconfined root.  
+  * \[ \] **Capabilities:** Drop unused Linux capabilities (e.g., CAP\_SYS\_ADMIN) for services.  
+  * \[ \] **Sandboxing:** Run infotainment apps in containers or restricted users.  
+* \[ \] **Kernel**  
+  * \[ \] **Config:** Disable kernel module loading after boot (CONFIG\_MODULE\_SIG\_FORCE).  
+  * \[ \] **Syscalls:** Filter syscalls using seccomp-bpf.  
+* \[ \] **Infotainment Isolation**  
+  * \[ \] Verify IVI is isolated from critical car functionalities to prevent lateral movement to safety systems.
+
+## Automotive SPICE & Testing (Verification)**
+
+*Focus: Process and validation.*
+
+* \[ \] **Static Analysis (SAST)**  
+  * \[ \] **MISRA C/C++:** Verify compliance with MISRA coding standards (no undefined behaviors).  
+  * \[ \] **CERT C:** Check against CERT secure coding rules.  
+  * \[ \] **Code Analysis:** Scan for buffer overflows, SQL injections, and insecure data handling.  
+* \[ \] **Dynamic Analysis (DAST) & Vulnerability Mgmt**  
+  * \[ \] **Fuzzing:** Fuzz all external interfaces (CAN, Ethernet, Wi-Fi, Bluetooth, USB).  
+  * \[ \] **Penetration Testing:** Conduct grey-box testing on the final integration level.  
+  * \[ \] **Web Vectors:** Test against XSS, CSRF, RCE if web interfaces are present.  
+  * \[ \] **Malware:** Test resistance to malware injection and execution on the system.  
+  * \[ \] **Scanning:** Conduct regular vulnerability scans for open ports and misconfigurations.  
+* \[ \] **Traceability**  
+  * \[ \] Verify every Security Goal \-\> Functional Requirement \-\> Technical Requirement \-\> Test Case.
+
+## AI & Machine Learning Security (Autonomous Driving)**
+
+*Focus: Adversarial Machine Learning and Model Integrity.*
+
+* \[ \] **Adversarial Robustness**  
+  * \[ \] **Perturbation Testing:** Test perception models against digital perturbations (noise) and physical patches (e.g., stickers on stop signs).  
+  * \[ \] **Data Poisoning:** Verify integrity of the training dataset to prevent backdoor injection.  
+* \[ \] **Model Security**  
+  * \[ \] **Model Extraction:** Protect the model weights (intellectual property) using encryption and TEEs.  
+  * \[ \] **Input Validation:** Implement plausibility checks on inference outputs (e.g., "Car cannot move sideways instantly").
+
+## Sensor Security (Physics Layer)**
+
+*Focus: Hardware attacks on LiDAR, Radar, and Cameras.*
+
+* \[ \] **Jamming & Saturation**  
+  * \[ \] **LiDAR/Radar:** Verify system detects saturation/blinding attacks and enters a safe degradation mode.  
+  * \[ \] **Camera:** Check behavior when cameras are blinded by lasers or strong light sources.  
+* \[ \] **Spoofing (Relay Attacks)**  
+  * \[ \] **Radar:** Test resilience against signal replay (ghost object generation).  
+  * \[ \] **GPS/GNSS:** Ensure system cross-checks GPS location with wheel odometry and IMU to detect spoofing.  
+  * \[ \] **Time Spoofing:** Ensure GNSS time is validated before being used for certificate expiration checks.  
+* \[ \] **Sensor Fusion & Privacy**  
+  * \[ \] **Consistency Check:** Verify that the fusion layer flags discrepancies (e.g., Camera sees object, LiDAR does not) as potential attacks.
+
+## Privacy & Data Compliance (GDPR / CCPA)**
+
+*Focus: Handling of PII and user consent.*
+
+* \[ \] **Consent Management**  
+  * \[ \] **Opt-in/Opt-out:** Verify UI allows users to manage data collection consent (e.g., telemetry, location).  
+  * \[ \] **Right to Erasure:** Ensure a mechanism exists to delete all user data upon request or vehicle reset.  
+* \[ \] **Data Minimization**  
+  * \[ \] **Face Blurring:** Verify cameras blur faces/license plates before uploading data to the cloud.  
+  * \[ \] **Anonymization:** Ensure telemetry data is decoupled from the VIN or User ID where possible.  
+* \[ \] **Biometrics (Driver Monitoring)**  
+  * \[ \] **Template Storage:** Biometric templates (face/fingerprint) must be stored in secure elements, never raw.  
+  * \[ \] **Liveness Detection:** Test biometric systems against spoofing (photos, masks, silicone fingers).
+
+## Backend & Fleet Management Security**
+
+*Focus: The cloud infrastructure controlling the AV fleet.*
+
+* \[ \] **Fleet Command Security**  
+  * \[ \] **Command Authentication:** Every remote command (e.g., "Unlock", "Summon") must be signed and authorized.  
+  * \[ \] **Rate Limiting:** Prevent mass-execution of commands (e.g., stopping 1000 cars simultaneously).  
+* \[ \] **Cloud Infrastructure**  
+  * \[ \] **API Security:** Secure API Gateways with OAuth2/OIDC and strict scope validation.  
+  * \[ \] **Container Security:** Scan Docker/Kubernetes images for vulnerabilities; enforce least privilege.
+
+## Forensics & Event Data Recorder (EDR)**
+
+*Focus: Post-incident investigation integrity.*
+
+* \[ \] **EDR Integrity**  
+  * \[ \] **Write Protection:** Ensure crash data cannot be overwritten or deleted by the user or malware.  
+  * \[ \] **Data Signing:** EDR logs should be digitally signed to prove they haven't been tampered with post-crash.  
+* \[ \] **Retrieval Port**  
+  * \[ \] **Access Control:** Physical retrieval via OBD/CDR tool requires authentication (Service 0x27).
+
+## Hardware Attacks (Fault Injection & Side Channels)**
+
+*Focus: Physical attacks on the PCB/Chips.*
+
+* \[ \] **Fault Injection (FI)**  
+  * \[ \] **Voltage Glitching:** Test ECU resilience against voltage drops intended to bypass boot checks.  
+  * \[ \] **Clock Glitching:** Test resilience against clock manipulation.  
+  * \[ \] **Laser FI:** (For high-security chips) verify shields/sensors against laser injection.  
+* \[ \] **Physical Tampering**  
+  * \[ \] **Anti-Tamper Mesh:** Check for active mesh on PCB to detect drilling/probing.  
+  * \[ \] **Epoxy/Potting:** Verify critical components are potted to resist removal/probing.
+
+## Production & Post-Production (Clauses 12 & 14\)**
+
+*Focus: Manufacturing and End-of-Life.*
+
+* \[ \] **Secure Manufacturing (Clause 12\)**  
+  * \[ \] **Station Security:** Programming stations must be authenticated and malware-free.  
+  * \[ \] **Key Injection:** Ensure keys are injected only once and the interface is permanently closed/locked afterwards.  
+* \[ \] **Decommissioning (Clause 14\)**  
+  * \[ \] **Data Wipe:** Verify "End of Life" procedure wipes all PII and cryptographic material.  
+  * \[ \] **Revocation:** Ensure vehicle certificates can be revoked in the PKI backend upon scrapping.
+
+## ISO/SAE 21434 Compliance Audit (Work Products)**
+
+*Focus: Mandatory Work Products (WP) for UN R155 Type Approval.*
+
+* \[ \] **WP-01: Cybersecurity Plan (Clause 6\)**  
+* \[ \] **WP-02: Item Definition (Clause 9.3)**  
+* \[ \] **WP-03: Cybersecurity Goals (Clause 9.4)**  
+* \[ \] **WP-04: Cybersecurity Concept (Clause 9.5)**  
+* \[ \] **WP-05: Cybersecurity Specifications (Clause 10.3)**  
+* \[ \] **WP-06: Verification Report (Clause 10.4)**  
+* \[ \] **WP-07: Validation Report (Clause 11\)**  
+* \[ \] **WP-08: Production Control Plan (Clause 12\)**  
+* \[ \] **WP-09: Incident Response Plan (Clause 13\)**  
+  * \[ \] Procedures for identifying, reporting, and responding to breaches.  
+* \[ \] **WP-10: Cybersecurity Case (Clause 6.4.7)**
 
 ## Incident Response:
    - [ ] Establish an incident response plan specifically tailored to smart car security incidents.
    - [ ] Define procedures for identifying, reporting, and responding to security breaches or suspicious activities.
    - [ ] Train relevant personnel on the proper execution of the incident response plan.
 
-## User Awareness and Training:
+## Operational Security & User Awareness and Training:
    - [ ] Educate smart car owners/users about potential security risks and best practices.
    - [ ] Provide guidance on setting strong passwords, avoiding phishing attempts, and being cautious of untrusted networks.
    - [ ] Encourage regular software updates and responsible usage of remote access features.
