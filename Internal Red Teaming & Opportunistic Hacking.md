@@ -2,7 +2,7 @@
 ## Comprehensive Checklist & Test Case Catalog
 
 **Document Version:** 1.0  
-**Assessment Type:** Internal Red Team / Adversary Simulation  
+**Assessment Type:** Internal Red Team / Adversary Simulation + Opportunistic Hacking
 **Environment:** Corporate Internal Network  
 **Classification:** Authorized Security Testing  
 **Status:** Draft / Test Plan  
